@@ -1,16 +1,45 @@
-# React + Vite
+# Iris Network Systems
+## 🚀 Quick start
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Requirements
+- **Node.js** ≥ 18
+- **npm** (or **yarn** / **pnpm**)
 
-Currently, two official plugins are available:
+### Install
+```bash
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Run locally
+```bash
+npm run dev
+```
 
-## React Compiler
+### Build & preview
+```bash
+npm run build
+npm run preview
+```
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Project notes
+- Built with **React**, **React Router**, and **TailwindCSS**.
+- Images/assets live under `src/assets/`.
+- Page components are under `src/pages/` and shared UI in `src/components/`.
+- Custom hooks/utilities live in `src/lib/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ⚠️ Known issues (WIP)
+- **Who Trust Us** section not animated.
+- **ScrollSlide** animation not fully smooth.
+- **About** page testimonials not visible on a full page reload.
+- **Footer** links not fully populated.
+- **Training**, **News**, **Contact** pages not created.
+- **Mobile** compatibility/layout issues in several sections.
+
+---
+
+## 📄 License
+© 2025 Iris Network Solutions
