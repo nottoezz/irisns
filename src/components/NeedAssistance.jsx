@@ -35,7 +35,7 @@ export default function NeedAssistance({
             <div className="mt-[-0.5rem] mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-66" />
           </Reveal>
           <Reveal direction="down" duration={2200} distance={20} delay={300}>
-            <div className="mt-[-0.5rem] mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-66" />
+            <div className="mt-[-0.5rem] mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-100" />
           </Reveal>
 
           {/* heading */}

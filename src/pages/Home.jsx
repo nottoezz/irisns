@@ -91,7 +91,7 @@ export default function Home() {
             <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
           </Reveal>
           <Reveal direction="down" duration={2200} distance={20} delay={300}>
-            <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
+            <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-100" />
           </Reveal>
 
           <Reveal direction="down" duration={1400} distance={20} delay={100}>
@@ -191,7 +191,7 @@ export default function Home() {
               <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
             </Reveal>
             <Reveal direction="down" duration={2200} distance={20} delay={300}>
-              <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
+              <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-100" />
             </Reveal>
 
             <Reveal direction="down" duration={1200} distance={20} delay={100}>
