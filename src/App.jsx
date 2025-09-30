@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Products from "./pages/Products.jsx";
 import About from "./pages/About.jsx";
 import Training from "./pages/Training.jsx";
+import News from "./pages/News.jsx";
 
 function AppInner() {
   return (
@@ -18,6 +19,7 @@ function AppInner() {
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
             <Route path="/training" element={<Training />} />
+            <Route path="/news" element={<News />}/>
           </Routes>
         </main>
         <Footer />
