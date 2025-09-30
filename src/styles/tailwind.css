@@ -213,48 +213,6 @@
   .h2 {
     @apply text-4xl font-semibold text-white;
   }
-  .stat-circle__glass {
-    opacity: 1;
-    transition: opacity 1000ms ease, backdrop-filter 5000ms ease;
-    transition-delay: 800ms;
-  }
-
-  .reveal:not(.is-visible) .stat-circle__glass {
-    opacity: 0;
-    --tw-backdrop-blur: blur(0px);
-  }
-
-  .reveal.is-visible .stat-circle__glass {
-    opacity: 1;
-    --tw-backdrop-blur: blur(10px);
-  }
-
-  .stat-circle__plus-anchor {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: inline-flex;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .stat-circle__plus-content {
-    display: inline-flex;
-    pointer-events: none;
-  }
-
-  .stat-circle__unit {
-    position: absolute;
-    pointer-events: none;
-  }
-
-  .stat-circle__unit-inner {
-    display: inline-block;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-    line-height: 1;
-    letter-spacing: 0.35em;
-  }
 }
 
 /* reveal + scroll utilities */

@@ -78,14 +78,17 @@ export default function StatCircleNumber({
               className="block"
             >
               <span
-                className="stat-circle__plus-anchor mt-18"
                 aria-hidden
+                className="absolute pt-4 right-0 top-0 flex justify-center pointer-events-none"
                 style={{
                   width: `${plusIconWidthCh}ch`,
                   lineHeight: 1,
                 }}
               >
-                <span className="stat-circle__plus-content absolute inset-x-0 top-0 flex items-center justify-center -translate-y-17">
+                <span
+                  className="flex w-full items-center justify-center pointer-events-none"
+                  style={{ transform: "translateY(-17px)" }}
+                >
                   {plusIcon}
                 </span>
               </span>
@@ -106,14 +109,22 @@ export default function StatCircleNumber({
         >
           <span
             aria-hidden
-            className={`stat-circle__unit ${
+            className={`absolute pointer-events-none -translate-y-2 ${
               unitSide === "left"
                 ? "-left-6 md:-left-7"
                 : "-right-6 md:-right-7"
             }`}
             style={{ top: `${downBiasPct}%` }}
           >
-            <span className="stat-circle__unit-inner text-[10px] md:text-[12px] uppercase text-white/80">
+            <span
+              className="inline-block text-[10px] md:text-[12px] uppercase text-white/80"
+              style={{
+                writingMode: "vertical-rl",
+                transform: "translateY(-50%) rotate(180deg)",
+                lineHeight: 1,
+                letterSpacing: "0.35em",
+              }}
+            >
               {unit}
             </span>
           </span>
