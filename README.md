@@ -36,7 +36,6 @@ npm run preview
 - **ScrollSlide** animation not fully smooth.
 - **About** page testimonials not visible on a full page reload.
 - **Footer** links not fully populated.
-- **Training**, **News**, **Contact** pages not created.
 - **Mobile** compatibility/layout issues in several sections.
 - **Nav bar** background does not change bg per page.
 - **Background** not consistent with home page.
