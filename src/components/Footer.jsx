@@ -1,6 +1,6 @@
 // imports
 import { Link } from "react-router-dom";
-import logo from "../assets/logos/iris-logo-white.svg";
+import logo from "../assets/logos/irisLogoWhite.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();

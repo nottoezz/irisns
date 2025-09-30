@@ -1,7 +1,7 @@
 // imports
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import logo from "../assets/logos/Iris-logo-white.svg";
+import logo from "../assets/logos/irisLogoWhite.svg";
 
 // nav
 const NAV = [
