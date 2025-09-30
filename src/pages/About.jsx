@@ -1,13 +1,14 @@
 // imports
 import React from "react";
+
+// components
 import Reveal from "../components/Reveal";
 import ScrollSlide from "../components/ScrollSlide";
 import StatCircle from "../components/stat-circle";
-
-import plusIcon from "../assets/utility/plusIcon.svg";
 import Carousel from "../components/Carousel.jsx";
 
 // imgs
+import plusIcon from "../assets/utility/plusIcon.svg";
 import connectedGlobe from "../assets/img/irisConnectedGlobe.webp";
 import whatWeDo from "../assets/img/irisWhatWeDo.webp";
 

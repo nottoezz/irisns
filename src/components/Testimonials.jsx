@@ -1,4 +1,4 @@
-// src/components/Testimonials.jsx
+// imports
 import React from "react";
 
 // logos

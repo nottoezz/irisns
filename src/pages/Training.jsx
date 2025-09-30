@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+// imports
+import { useEffect } from "react";
+
+// components
 import Reveal from "../components/Reveal";
-import heroImg from "../assets/img/irisTrainingHero.webp";
-import trainingPortrait from "../assets/img/irisTrainingLady.webp";
 import TrainingLevels from "../components/TrainingLevels";
 import NeedAssistance from "../components/NeedAssistance";
+
+// imgs
+import heroImg from "../assets/img/irisTrainingHero.webp";
+import trainingPortrait from "../assets/img/irisTrainingLady.webp";
 
 export default function Training() {
   useEffect(() => {

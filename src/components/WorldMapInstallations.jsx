@@ -1,3 +1,4 @@
+// imports
 import Reveal from "./Reveal";
 
 // map image

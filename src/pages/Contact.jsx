@@ -1,9 +1,13 @@
+// imports
 import { useEffect, useRef, useState } from "react";
+
+// components
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
-
-import heroImg from "../assets/img/irisContactHero.webp";
 import ContactMap from "../components/ContacMap";
+
+// imgs
+import heroImg from "../assets/img/irisContactHero.webp";
 
 // cloudflare and server consts
 const TURNSTILE_SITEKEY = "0x4AAAAAABzrbGQ8Qi9Ke_2D";

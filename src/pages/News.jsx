@@ -1,7 +1,11 @@
-// src/pages/News.jsx
-import React, { useEffect, useRef, useState } from "react";
+// imports
+import { useEffect, useRef, useState } from "react";
+
+// componenets
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
+
+// images
 import heroImg from "../assets/img/irisLinkedin.webp";
 
 /* config for the sociablekit widget */

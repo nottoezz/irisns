@@ -2,13 +2,16 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+// componenets
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
 import WhoTrustUs from "../components/WhoTrustsUs";
 
+// imgs
 import irisDefaultDashboard from "../assets/img/irisDefaultDashboard.webp";
 import irisNetworkMonitoring from "../assets/img/irisNetworkMonitoring.png";
 
+// pill data
 import { LEFT_PILLS, RIGHT_PILLS } from "../data/pills";
 import { PillIcon } from "../icons/pillIcons";
 
