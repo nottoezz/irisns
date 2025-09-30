@@ -38,6 +38,9 @@ npm run preview
 - **Footer** links not fully populated.
 - **Training**, **News**, **Contact** pages not created.
 - **Mobile** compatibility/layout issues in several sections.
+- **Nav bar** background does not change bg per page.
+- **Background** not consistent with home page.
+- **Training page** ICE links not populated.
 
 ---
 
