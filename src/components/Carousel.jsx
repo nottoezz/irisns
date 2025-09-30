@@ -121,7 +121,7 @@ export default function Carousel({
 
       {/* dots */}
       <div
-        className={`mt-6 w-full flex ${alignClass} items-center gap-2`}
+        className={`mt-22 w-full flex ${alignClass} items-center gap-2`}
         role="tablist"
         aria-label="slide selector"
       >
