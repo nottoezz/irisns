@@ -107,33 +107,39 @@ export default function About() {
 
           {/* counters */}
           <div className="mt-14 md:mt-16 grid place-items-center md:grid-cols-3 gap-10 md:gap-6">
-            <StatCircle
-              label="EXPERIENCE"
-              value={12}
-              unit="YEARS"
-              unitSide="right"
-            />
-            <StatCircle
-              label="COUNTRIES"
-              value={12}
-              plus
-              plusIcon={
-                <img
-                  src={plusIcon}
-                  alt=""
-                  aria-hidden="true"
-                  className="ml-10 inline-block h-[0.9em] w-[0.9em] align-baseline lg:scale-[0.5]"
-                />
-              }
-              plusIconWidthCh={1.2}
-              unitSide="right"
-            />
+            <Reveal direction="left" duration={1000} distance={20}>
+              <StatCircle
+                label="EXPERIENCE"
+                value={12}
+                unit="YEARS"
+                unitSide="right"
+              />
+            </Reveal>
+            <Reveal direction="down" duration={1000} distance={20}>
+              <StatCircle
+                label="COUNTRIES"
+                value={12}
+                plus
+                plusIcon={
+                  <img
+                    src={plusIcon}
+                    alt=""
+                    aria-hidden="true"
+                    className="ml-10 inline-block h-[0.9em] w-[0.9em] align-baseline lg:scale-[0.5]"
+                  />
+                }
+                plusIconWidthCh={1.2}
+                unitSide="right"
+              />
+            </Reveal>
+            <Reveal direction="right" duration={1000} distance={20}>
             <StatCircle
               label="NETWORKS"
               value={260}
               unit="THOUSAND"
               unitSide="right"
             />
+            </Reveal>
           </div>
         </div>
       </section>

@@ -213,6 +213,48 @@
   .h2 {
     @apply text-4xl font-semibold text-white;
   }
+  .stat-circle__glass {
+    opacity: 1;
+    transition: opacity 1000ms ease, backdrop-filter 5000ms ease;
+    transition-delay: 800ms;
+  }
+
+  .reveal:not(.is-visible) .stat-circle__glass {
+    opacity: 0;
+    --tw-backdrop-blur: blur(0px);
+  }
+
+  .reveal.is-visible .stat-circle__glass {
+    opacity: 1;
+    --tw-backdrop-blur: blur(10px);
+  }
+
+  .stat-circle__plus-anchor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .stat-circle__plus-content {
+    display: inline-flex;
+    pointer-events: none;
+  }
+
+  .stat-circle__unit {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .stat-circle__unit-inner {
+    display: inline-block;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
+    line-height: 1;
+    letter-spacing: 0.35em;
+  }
 }
 
 /* reveal + scroll utilities */
@@ -225,29 +267,50 @@
     --reveal-dur: 1000ms;
 
     opacity: 0;
-    transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
     transition: opacity var(--reveal-dur) cubic-bezier(0.22, 0.9, 0.3, 1)
-        var(--reveal-delay),
-      transform var(--reveal-dur) cubic-bezier(0.22, 0.9, 0.3, 1)
         var(--reveal-delay);
-    will-change: opacity, transform;
+  }
+
+  .reveal:not(.reveal--static) > * {
+    transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
+    transition: transform var(--reveal-dur) cubic-bezier(0.22, 0.9, 0.3, 1)
+        var(--reveal-delay);
   }
 
   .reveal.is-visible {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+  }
+
+  .reveal.is-visible:not(.reveal--static) > * {
+    transform: none;
+  }
+
+  .reveal.reveal--static {
+    opacity: 1;
+    transition: none;
+  }
+
+  .reveal.reveal--static > * {
+    transform: none;
+    transition: none;
   }
 
   /* respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
     .reveal,
-    .reveal.is-visible {
+    .reveal.is-visible,
+    .reveal.reveal--static {
       opacity: 1 !important;
+      transition: none !important;
+    }
+
+    .reveal > *,
+    .reveal.is-visible > *,
+    .reveal.reveal--static > * {
       transform: none !important;
       transition: none !important;
     }
   }
-
   /* scroll-slide (driven by --slide-x / optional --img-shift) */
   [data-scroll-slide] {
     will-change: transform;
@@ -267,3 +330,4 @@
     opacity: 1;
   }
 }
+

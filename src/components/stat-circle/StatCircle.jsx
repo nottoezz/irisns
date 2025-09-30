@@ -24,7 +24,8 @@ export default function StatCircle({
       className={`relative rounded-full aspect-square w-[280px] md:w-[320px] lg:w-[360px] flex items-center justify-center ${className}`}
     >
       {/* glass bg */}
-      <div className="absolute inset-0 rounded-full backdrop-blur-[10px] bg-transparent ring-1 ring-white/10" />
+      <div className="absolute inset-0 rounded-full ring-1 ring-white/10"/>
+      <div className="stat-circle__glass absolute inset-0 rounded-full backdrop-blur-[5px] bg-transparent" />
 
       {/* content */}
       <div
@@ -45,7 +46,7 @@ export default function StatCircle({
         />
 
         {label && (
-          <Reveal direction="left" duration={1000} distance={40} delay={100}>
+          <Reveal direction="left" duration={3000} distance={40} delay={100}>
             <div className="mt-2 text-[10px] md:text-xs tracking-[.25em] text-white/70 uppercase">
               {label}
             </div>
@@ -55,3 +56,4 @@ export default function StatCircle({
     </div>
   );
 }
+

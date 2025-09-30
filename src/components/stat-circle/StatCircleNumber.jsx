@@ -23,7 +23,7 @@ export default function StatCircleNumber({
 
   return (
     <div className="relative inline-flex items-baseline justify-center">
-      {/* number block contatiner */}
+      {/* number block container */}
       <div
         className="relative inline-block align-baseline"
         style={{ minWidth: `calc(${minCh}ch + ${reservePlus}ch)` }}
@@ -48,7 +48,14 @@ export default function StatCircleNumber({
           className={`absolute left-0 top-0 w-full ${numberTextClasses} pointer-events-none`}
         >
           {/* number */}
-          <Reveal direction="up" duration={1000} distance={20} delay={200}>
+          <Reveal
+            as="span"
+            direction="up"
+            duration={3000}
+            distance={20}
+            delay={200}
+            className="block"
+          >
             <span
               ref={valNodeRef}
               className="inline-block align-baseline"
@@ -61,48 +68,58 @@ export default function StatCircleNumber({
           </Reveal>
 
           {/* anchored icon */}
-          <Reveal direction="down" duration={1000} distance={40} delay={100}>
-            {plus ? (
-              plusIcon ? (
-                <span
-                  className="absolute -translate-y-17 right-0 inline-flex items-center justify-center pointer-events-none"
-                  aria-hidden
-                  style={{ width: `${plusIconWidthCh}ch`, lineHeight: 1 }}
-                >
+          {plus && plusIcon ? (
+            <Reveal
+              as="span"
+              direction="down"
+              duration={3000}
+              distance={40}
+              delay={100}
+              className="block"
+            >
+              <span
+                className="stat-circle__plus-anchor mt-18"
+                aria-hidden
+                style={{
+                  width: `${plusIconWidthCh}ch`,
+                  lineHeight: 1,
+                }}
+              >
+                <span className="stat-circle__plus-content absolute inset-x-0 top-0 flex items-center justify-center -translate-y-17">
                   {plusIcon}
                 </span>
-              ) : null
-            ) : null}
-          </Reveal>
+              </span>
+            </Reveal>
+          ) : null}
         </span>
       </div>
 
       {/* side unit */}
-      <Reveal direction="down" duration={1000} distance={40} delay={100}>
-        {unit ? (
+      {unit ? (
+        <Reveal
+          as="span"
+          direction="down"
+          duration={3000}
+          distance={40}
+          delay={100}
+          className="block pointer-events-none"
+        >
           <span
             aria-hidden
-            className={`
-            absolute -translate-y-7
-            text-[10px] md:text-[12px] uppercase text-white/80
-            ${
+            className={`stat-circle__unit ${
               unitSide === "left"
                 ? "-left-6 md:-left-7"
                 : "-right-6 md:-right-7"
-            }
-          `}
-            style={{
-              top: `${downBiasPct}%`,
-              writingMode: "vertical-rl",
-              transform: "translateY(-50%) rotate(180deg)",
-              lineHeight: 1,
-              letterSpacing: "0.35em",
-            }}
+            }`}
+            style={{ top: `${downBiasPct}%` }}
           >
-            {unit}
+            <span className="stat-circle__unit-inner text-[10px] md:text-[12px] uppercase text-white/80">
+              {unit}
+            </span>
           </span>
-        ) : null}
-      </Reveal>
+        </Reveal>
+      ) : null}
     </div>
   );
 }
+

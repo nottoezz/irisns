@@ -24,6 +24,7 @@ export default function Reveal({
   ...rest
 }) {
   const { ref, visible } = useReveal({ once });
+  const [isStatic, setIsStatic] = React.useState(false);
 
   // compute offsets based on direction + distance
   const shift = {
@@ -40,13 +41,36 @@ export default function Reveal({
     "--reveal-delay": `${delay}ms`,
   };
 
+  React.useEffect(() => {
+    if (!once) {
+      setIsStatic(false);
+      return;
+    }
+
+    if (!visible || isStatic) {
+      return;
+    }
+
+    const timeout = setTimeout(
+      () => setIsStatic(true),
+      delay + duration + 50
+    );
+
+    return () => clearTimeout(timeout);
+  }, [visible, once, duration, delay, isStatic]);
+
   return (
     React.createElement(
       Tag,
       {
         ref,
         style: styleVars,
-        className: ["reveal", visible ? "is-visible" : "", className]
+        className: [
+          "reveal",
+          visible ? "is-visible" : "",
+          isStatic ? "reveal--static" : "",
+          className,
+        ]
           .join(" ")
           .trim(),
         ...rest,
