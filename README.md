@@ -41,6 +41,7 @@ npm run preview
 - **Nav bar** background does not change bg per page.
 - **Background** not consistent with home page.
 - **Training page** ICE links not populated.
+- **All pages** maintain scroll when changing page incorrect.
 
 ---
 
