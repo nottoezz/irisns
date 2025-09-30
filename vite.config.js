@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/iris-ns/",
+  base: "/irisns/",
   // server for local testing
   server: {
     host: '0.0.0.0',
