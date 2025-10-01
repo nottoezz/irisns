@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
 import WhoTrustUs from "../components/WhoTrustsUs";
+import DecorativeDots from "../components/ui/DecorativeDots";
 
 // imgs
 import irisDefaultDashboard from "../assets/img/irisDefaultDashboard.webp";
@@ -83,16 +84,8 @@ export default function Home() {
       {/* network monitoring & visibility */}
       <section className="section">
         <div className="container-narrow text-center">
-          {/* small decorative dots */}
-          <Reveal direction="down" duration={1400} distance={20} delay={100}>
-            <div className="mx-auto mb-4 mt-40 h-1 w-1 rounded-full bg-blue-600 opacity-30" />
-          </Reveal>
-          <Reveal direction="down" duration={1800} distance={20} delay={200}>
-            <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
-          </Reveal>
-          <Reveal direction="down" duration={2200} distance={20} delay={300}>
-            <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-100" />
-          </Reveal>
+          {/* Decorative Dots */}
+          <DecorativeDots/>
 
           <Reveal direction="down" duration={1400} distance={20} delay={100}>
             <div className="eyebrow mb-3">COMPREHENSIVE</div>

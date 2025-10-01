@@ -4,13 +4,15 @@ import { useEffect, useRef, useState } from "react";
 // components
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
-import ContactMap from "../components/ContacMap";
+import ContactMap from "../components/ContactMap";
+import { loadExternalScript } from "../lib/loadExternalScript";
 
 // imgs
 import heroImg from "../assets/img/irisContactHero.webp";
 
 // cloudflare and server consts
 const TURNSTILE_SITEKEY = "0x4AAAAAABzrbGQ8Qi9Ke_2D";
+const TURNSTILE_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js";
 const FORM_ACTION = "/mail/";
 
 export default function Contact() {
@@ -21,37 +23,61 @@ export default function Contact() {
   const formRef = useRef(null);
 
   useEffect(() => {
-    // load turnstile once (cloudflare bot check)
-    if (!document.querySelector('script[data-turnstile="1"]')) {
-      const s = document.createElement("script");
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-      s.async = true;
-      s.defer = true;
-      s.setAttribute("data-turnstile", "1");
-      document.body.appendChild(s);
-    }
+    let isMounted = true;
 
-    // define the global callbacks the widget will call
-    // (maybe redo without globals at later stage)
-    window.onTsSuccess = () => setCanSubmit(true);
-    window.onTsExpired = () => setCanSubmit(false);
-    window.onTsError = () => setCanSubmit(false);
+    loadExternalScript({
+      src: TURNSTILE_SRC,
+      selector: "script[data-turnstile='1']",
+      attributes: {
+        dataset: { turnstile: "1" },
+      },
+    }).catch((error) => {
+      console.warn("[contact] failed to load turnstile", error);
+      if (isMounted) {
+        setStatus("verification failed to load. please refresh and try again.");
+        setCanSubmit(false);
+      }
+    });
 
-    // when the hidden iframe loads, POST finished
+    const handleSuccess = () => {
+      if (isMounted) setCanSubmit(true);
+    };
+    const handleExpired = () => {
+      if (isMounted) setCanSubmit(false);
+    };
+    const handleError = () => {
+      if (isMounted) {
+        setCanSubmit(false);
+        setStatus("verification failed. please retry.");
+      }
+    };
+
+    window.onTsSuccess = handleSuccess;
+    window.onTsExpired = handleExpired;
+    window.onTsError = handleError;
+
     const onIframeLoad = () => {
-      // only show a message if actually posted
       if (formRef.current?._pendingSubmit) {
         formRef.current.reset();
         setCanSubmit(false);
-        // try to reset the turnstile widget if available
-        if (window.turnstile) window.turnstile.reset();
-        setStatus("thank you — we’ll be in touch shortly.");
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+        setStatus("thank you - we'll be in touch shortly.");
         formRef.current._pendingSubmit = false;
       }
     };
+
     const node = iframeRef.current;
     node?.addEventListener("load", onIframeLoad);
-    return () => node?.removeEventListener("load", onIframeLoad);
+
+    return () => {
+      isMounted = false;
+      delete window.onTsSuccess;
+      delete window.onTsExpired;
+      delete window.onTsError;
+      node?.removeEventListener("load", onIframeLoad);
+    };
   }, []);
 
   // simple gate before we let the browser submit the form
@@ -351,3 +377,5 @@ export default function Contact() {
     </main>
   );
 }
+
+

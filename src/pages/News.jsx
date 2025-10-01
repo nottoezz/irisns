@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 // componenets
 import Reveal from "../components/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
+import { loadExternalScript } from "../lib/loadExternalScript";
 
 // images
 import heroImg from "../assets/img/irisLinkedin.webp";
@@ -23,62 +24,94 @@ export default function News() {
   const widgetRef = useRef(null);
 
   useEffect(() => {
-    /* sociablekit script */
-    if (!document.querySelector(SK_SCRIPT_SELECTOR)) {
-      const s = document.createElement("script");
-      s.src = WIDGET_SRC;
-      s.async = true;
-      s.defer = true;
-      s.setAttribute("data-sk", "linkedin-page-posts");
-      s.onerror = () => console.warn("[news] failed to load linkedin widget");
-      document.body.appendChild(s);
-    }
+    let isMounted = true;
+    const timeouts = [];
+
+    loadExternalScript({
+      src: WIDGET_SRC,
+      selector: SK_SCRIPT_SELECTOR,
+      attributes: {
+        dataset: { sk: "linkedin-page-posts" },
+      },
+    }).catch((error) => {
+      console.warn("[news] failed to load linkedin widget", error);
+    });
 
     const el = widgetRef.current;
-    if (!el) return;
+    if (!el) {
+      return () => {
+        isMounted = false;
+        timeouts.forEach(clearTimeout);
+      };
+    }
 
-    /* find followers node and store */
     const readFollowers = (root) => {
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, null);
+      if (!root || !isMounted) {
+        return;
+      }
+
+      const walker = document.createTreeWalker(
+        root,
+        NodeFilter.SHOW_ELEMENT,
+        null,
+      );
       let found = null;
 
       while (walker.nextNode()) {
         const node = walker.currentNode;
         const text = node.textContent || "";
         if (/followers/i.test(text)) {
-          const m = text.match(/([\d.,\s]+)\s*followers/i);
-          if (m && m[1]) {
-            found = m[1].trim();
+          const match = text.match(/([\d.,\s]+)\s*followers/i);
+          if (match && match[1]) {
+            found = match[1].trim();
             break;
           }
         }
       }
-      if (found) setFollowers(found);
+
+      if (found) {
+        setFollowers(found);
+      }
     };
 
-    /* watch widget, paint, read followers */
-    const obs = new MutationObserver((muts) => {
+    const observer = new MutationObserver((mutations) => {
+      if (!isMounted) {
+        return;
+      }
+
       let sawContent = false;
 
-      for (const m of muts) {
-        for (const n of m.addedNodes) {
-          if (n.nodeType !== 1) continue;
-          const cls = n.className?.toString() || "";
-          if (!sawContent && cls.includes("sk-")) sawContent = true;
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node.nodeType !== 1) {
+            continue;
+          }
+          const className = node.className?.toString() || "";
+          if (!sawContent && className.includes("sk-")) {
+            sawContent = true;
+          }
         }
       }
 
       if (sawContent) {
-        setLoaded(true);
+        if (isMounted) {
+          setLoaded(true);
+        }
         readFollowers(el);
-        setTimeout(() => readFollowers(el), 600); 
-        setTimeout(() => readFollowers(el), 1500);
+        timeouts.push(setTimeout(() => readFollowers(el), 600));
+        timeouts.push(setTimeout(() => readFollowers(el), 1500));
       }
     });
 
-    obs.observe(el, { childList: true, subtree: true });
-    return () => obs.disconnect();
+    observer.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      isMounted = false;
+      observer.disconnect();
+      timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    };
   }, []);
+
 
   return (
     <main className="relative flex-1 overflow-x-hidden bg-[#0f1123]">
@@ -148,7 +181,7 @@ export default function News() {
                 follow us on linkedin
               </a>
               <span className="pointer-events-auto rounded-xl border border-white/15 bg-black/20 backdrop-blur px-4 py-2 text-sm text-white/90">
-                {followers ? `${followers} followers` : "— followers"}
+                {followers ? `${followers} followers` : "... followers"}
               </span>
             </div>
           </div>
@@ -212,3 +245,6 @@ function SkeletonCard() {
     </article>
   );
 }
+
+
+

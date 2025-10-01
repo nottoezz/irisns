@@ -1,7 +1,51 @@
 // src/components/NeedAssistance.jsx
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
+
+function buildCardConfig({ trainingHref, kbHref }) {
+  return [
+    {
+      key: "training",
+      title: "Iris Training",
+      copy:
+        "Tools, tips, videos and training material for all types of users.",
+      cta: "View",
+      href: trainingHref,
+      direction: "left",
+    },
+    {
+      key: "knowledge-base",
+      title: "Knowledge Base",
+      copy:
+        "Access the Iris knowledge base with regex cheatsheets, release notes and solution articles.",
+      cta: "View",
+      href: kbHref,
+      direction: "right",
+    },
+  ];
+}
+
+function CardLink({ href, className, children }) {
+  const isExternal = /^https?:/i.test(href);
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={className}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link to={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 /**
  * NeedAssistance
@@ -23,6 +67,11 @@ export default function NeedAssistance({
   trainingHref = "https://support.irisns.com/support/login",
   kbHref = "https://support.irisns.com/support/login",
 }) {
+  const cards = useMemo(
+    () => buildCardConfig({ trainingHref, kbHref }),
+    [trainingHref, kbHref]
+  );
+
   return (
     <section id={id} className={["section", className].join(" ").trim()}>
       <div className="pb-40">
@@ -54,82 +103,50 @@ export default function NeedAssistance({
         {/* cards */}
         <div className="container-narrow mt-12">
           <div className="grid gap-10 lg:grid-cols-2">
-            {/* training */}
-            <Reveal direction="left" duration={3200} distance={20}>
-              <article className="flex flex-col h-full">
-                <Link
-                  to={trainingHref}
-                  className="group h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
-                >
-                  <div className="text-white/85 font-medium">Iris Training</div>
-                  <div className="mt-3 h-px w-full bg-white/20 transition-colors group-hover:bg-[#2f81f7]" />
-                  <p className="mt-6 text-2xl sm:text-3xl leading-tight font-semibold text-white/75 transition-colors group-hover:text-white">
-                    Tools, tips, videos and training material for all types of
-                    users.
-                  </p>
+            {cards.map((card) => (
+              <Reveal
+                key={card.key}
+                direction={card.direction}
+                duration={3200}
+                distance={20}
+              >
+                <article className="flex flex-col h-full">
+                  <CardLink
+                    href={card.href}
+                    className="group h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
+                  >
+                    <div className="text-white/85 font-medium">{card.title}</div>
+                    <div className="mt-3 h-px w-full bg-white/20 transition-colors group-hover:bg-[#2f81f7]" />
+                    <p className="mt-6 text-2xl sm:text-3xl leading-tight font-semibold text-white/75 transition-colors group-hover:text-white">
+                      {card.copy}
+                    </p>
 
-                  <div className="mt-auto pt-10 flex items-center w-full">
-                    <span className="text-lg md:text-xl text-white/80 transition-colors group-hover:text-white">
-                      View
-                    </span>
-                    <svg
-                      className="ml-auto h-6 w-6 md:h-7 md:w-7 group-hover:translate-x-1 text-white/80 transition-colors group-hover:text-[#2f81f7]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="m13 5 7 7-7 7" />
-                    </svg>
-                  </div>
-                </Link>
-              </article>
-            </Reveal>
-
-            {/* knowledge base */}
-            <Reveal direction="right" duration={3200} distance={20}>
-              <article className="flex flex-col h-full">
-                <Link
-                  to={kbHref}
-                  className="group h-full flex flex-col focus:outline-none focus:ring-2 focus:ring-white/20 rounded-lg"
-                >
-                  <div className="text-white/85 font-medium">
-                    Knowledge Base
-                  </div>
-                  <div className="mt-3 h-px w-full bg-white/20 transition-colors group-hover:bg-[#2f81f7]" />
-                  <p className="mt-6 text-2xl sm:text-3xl leading-tight font-semibold text-white/75 transition-colors group-hover:text-white">
-                    Access the Iris knowledge base with regex cheatsheets,
-                    release notes and solution articles.
-                  </p>
-
-                  <div className="mt-auto pt-10 flex items-center w-full">
-                    <span className="text-lg md:text-xl text-white/80 transition-colors group-hover:text-white">
-                      View
-                    </span>
-                    <svg
-                      className="ml-auto h-6 w-6 md:h-7 md:w-7 group-hover:translate-x-1 text-white/80 transition-colors group-hover:text-[#2f81f7]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="m13 5 7 7-7 7" />
-                    </svg>
-                  </div>
-                </Link>
-              </article>
-            </Reveal>
+                    <div className="mt-auto pt-10 flex items-center w-full">
+                      <span className="text-lg md:text-xl text-white/80 transition-colors group-hover:text-white">
+                        {card.cta}
+                      </span>
+                      <svg
+                        className="ml-auto h-6 w-6 md:h-7 md:w-7 group-hover:translate-x-1 text-white/80 transition-colors group-hover:text-[#2f81f7]"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                      </svg>
+                    </div>
+                  </CardLink>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
+

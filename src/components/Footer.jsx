@@ -64,8 +64,8 @@ export default function Footer() {
               <li><Link to="/about" className="hover:text-white">about us</Link></li>
               <li><Link to="/contact" className="hover:text-white">contact</Link></li>
               <li><a href="/docs/paia-manual.pdf" className="hover:text-white">paia manual</a></li>
-              <li><a href="/docs/paia-form-2.pdf" className="hover:text-white">paia form 2 – request</a></li>
-              <li><a href="/docs/paia-form-3.pdf" className="hover:text-white">paia form 3 – outcome</a></li>
+              <li><a href="/docs/paia-form-2.pdf" className="hover:text-white">paia form 2 - request</a></li>
+              <li><a href="/docs/paia-form-3.pdf" className="hover:text-white">paia form 3 - outcome</a></li>
               <li><Link to="/legal/privacy" className="hover:text-white">privacy policy</Link></li>
               <li><Link to="/legal/eula" className="hover:text-white">eula</Link></li>
             </ul>
@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* bottom bar */}
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
-          <p>© {year} iris network solutions</p>
+          <p>© {year} iris network systems</p>
           <a
             href="https://www.linkedin.com/company/iris-network-solutions"
             target="_blank"
@@ -89,3 +89,4 @@ export default function Footer() {
     </footer>
   );
 }
+
