@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 // components
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import ScrollSlide from "../components/ScrollSlide";
 import NeedAssistance from "../components/NeedAssistance";
 

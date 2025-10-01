@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // componenets
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
 import WhoTrustUs from "../components/WhoTrustsUs";
 import DecorativeDots from "../components/ui/DecorativeDots";

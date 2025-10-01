@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // components
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
 import ContactMap from "../components/ContactMap";
 import { loadExternalScript } from "../lib/loadExternalScript";

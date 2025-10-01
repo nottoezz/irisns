@@ -1,6 +1,6 @@
 // imports
 import { useCountUp } from "../../lib/useCountUp.js";
-import Reveal from "../Reveal.jsx";
+import Reveal from "../ui/Reveal";
 import { useReveal } from "../../lib/useReveal.js";
 import StatCircleNumber from "./StatCircleNumber.jsx";
 

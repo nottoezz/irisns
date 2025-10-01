@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // componenets
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import NeedAssistance from "../components/NeedAssistance";
 import { loadExternalScript } from "../lib/loadExternalScript";
 

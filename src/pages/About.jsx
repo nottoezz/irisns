@@ -2,7 +2,7 @@
 import React from "react";
 
 // components
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import ScrollSlide from "../components/ScrollSlide";
 import StatCircle from "../components/stat-circle";
 import Carousel from "../components/Carousel.jsx";

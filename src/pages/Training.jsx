@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 // components
-import Reveal from "../components/Reveal";
+import Reveal from "../components/ui/Reveal";
 import TrainingLevels from "../components/TrainingLevels";
 import NeedAssistance from "../components/NeedAssistance";
 

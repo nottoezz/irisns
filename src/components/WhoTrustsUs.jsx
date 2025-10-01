@@ -1,5 +1,5 @@
 // imports
-import Reveal from "./Reveal";
+import Reveal from "./ui/Reveal";
 import DecorativeDots from "./ui/DecorativeDots"
 
 // built-in logos (adjust paths if your layout differs)
