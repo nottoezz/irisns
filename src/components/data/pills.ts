@@ -1,5 +1,5 @@
 // Pills data for home page
-import type { PillIconName } from "../icons/pillIcons";
+import type { PillIconName } from "./pillIcons";
 
 export type PillSpec = { label: string; icon: PillIconName };
 

@@ -1,5 +1,5 @@
 // imports
-import Reveal from "../ui/Reveal";
+import Reveal from "@ui/Reveal";
 
 // map image
 import worldMap from "@assets/img/irisLocationMap.svg";

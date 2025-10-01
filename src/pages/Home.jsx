@@ -3,18 +3,18 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // componenets
-import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/features/NeedAssistance";
-import WhoTrustUs from "../components/features/WhoTrustsUs";
-import DecorativeDots from "../components/ui/DecorativeDots";
+import Reveal from "@ui/Reveal";
+import NeedAssistance from "@features/NeedAssistance";
+import WhoTrustUs from "@features/WhoTrustsUs";
+import DecorativeDots from "@ui/DecorativeDots";
 
 // imgs
-import irisDefaultDashboard from "../assets/img/irisDefaultDashboard.webp";
-import irisNetworkMonitoring from "../assets/img/irisNetworkMonitoring.png";
+import irisDefaultDashboard from "@assets/img/irisDefaultDashboard.webp";
+import irisNetworkMonitoring from "@assets/img/irisNetworkMonitoring.png";
 
 // pill data
-import { LEFT_PILLS, RIGHT_PILLS } from "../data/pills";
-import { PillIcon } from "../icons/pillIcons";
+import { LEFT_PILLS, RIGHT_PILLS } from "@data/pills";
+import { PillIcon } from "@data/pillIcons";
 
 // pill chip
 function Pill({ label, icon, className = "", iconRight = false }) {

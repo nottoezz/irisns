@@ -3,16 +3,16 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 // components
-import Reveal from "../components/ui/Reveal";
-import ScrollSlide from "../components/ui/ScrollSlide";
-import NeedAssistance from "../components/features/NeedAssistance";
+import Reveal from "@ui/Reveal";
+import ScrollSlide from "@ui/ScrollSlide";
+import NeedAssistance from "@features/NeedAssistance";
 
 // images
-import heroGlobe from "../assets/img/irispProductsHero.webp";
-import coreGraphic from "../assets/img/irisCoreGraphic.webp";
-import netflowGraphic from "../assets/img/IrisNetflowGraphic.webp";
-import mapsGraphic from "../assets/img/IrisiMapsGraphic.webp";
-import irisYoungBusinessMan from "../assets/img/irisYoungBusinessMan.jpg";
+import heroGlobe from "@assets/img/irispProductsHero.webp";
+import coreGraphic from "@assets/img/irisCoreGraphic.webp";
+import netflowGraphic from "@assets/img/IrisNetflowGraphic.webp";
+import mapsGraphic from "@assets/img/IrisiMapsGraphic.webp";
+import irisYoungBusinessMan from "@assets/img/irisYoungBusinessMan.jpg";
 
 // section cards
 const SECTIONS = [

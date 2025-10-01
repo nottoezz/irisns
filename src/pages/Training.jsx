@@ -2,13 +2,13 @@
 import { useEffect } from "react";
 
 // components
-import Reveal from "../components/ui/Reveal";
-import TrainingLevels from "../components/features/TrainingLevels";
-import NeedAssistance from "../components/features/NeedAssistance";
+import Reveal from "@ui/Reveal";
+import TrainingLevels from "@features/TrainingLevels";
+import NeedAssistance from "@features/NeedAssistance";
 
 // imgs
-import heroImg from "../assets/img/irisTrainingHero.webp";
-import trainingPortrait from "../assets/img/irisTrainingLady.webp";
+import heroImg from "@assets/img/irisTrainingHero.webp";
+import trainingPortrait from "@assets/img/irisTrainingLady.webp";
 
 export default function Training() {
   useEffect(() => {

@@ -1,6 +1,6 @@
 // imports
-import Reveal from "../ui/Reveal";
-import DecorativeDots from "../ui/DecorativeDots"
+import Reveal from "@ui/Reveal";
+import DecorativeDots from "@ui/DecorativeDots"
 
 // built-in logos (adjust paths if your layout differs)
 import logoLinkAfrica from "@assets/logos/link-africa.png";

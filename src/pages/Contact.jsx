@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 
 // components
-import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/features/NeedAssistance";
-import ContactMap from "../components/features/ContactMap";
-import { loadExternalScript } from "../hooks/loadExternalScript";
+import Reveal from "@ui/Reveal";
+import NeedAssistance from "@features/NeedAssistance";
+import ContactMap from "@features/ContactMap";
+import { loadExternalScript } from "@hooks/loadExternalScript";
 
 // imgs
-import heroImg from "../assets/img/irisContactHero.webp";
+import heroImg from "@assets/img/irisContactHero.webp";
 
 // cloudflare and server consts
 const TURNSTILE_SITEKEY = "0x4AAAAAABzrbGQ8Qi9Ke_2D";

@@ -2,21 +2,21 @@
 import React from "react";
 
 // components
-import Reveal from "../components/ui/Reveal";
-import ScrollSlide from "../components/ui/ScrollSlide.jsx";
-import StatCircle from "../components/ui/stat-circle/index.js";
-import Carousel from "../components/ui/Carousel.jsx";
+import Reveal from "@ui/Reveal";
+import ScrollSlide from "@ui/ScrollSlide.jsx";
+import StatCircle from "@ui/stat-circle/index.js";
+import Carousel from "@ui/Carousel.jsx";
 
 // imgs
-import plusIcon from "../assets/utility/plusIcon.svg";
-import connectedGlobe from "../assets/img/irisConnectedGlobe.webp";
-import whatWeDo from "../assets/img/irisWhatWeDo.webp";
+import plusIcon from "@assets/utility/plusIcon.svg";
+import connectedGlobe from "@assets/img/irisConnectedGlobe.webp";
+import whatWeDo from "@assets/img/irisWhatWeDo.webp";
 
 // components
-import WhoTrustUs from "../components/features/WhoTrustsUs.jsx";
-import WorldMapInstallations from "../components/features/WorldMapInstallations.jsx";
-import Testimonials from "../components/features/Testimonials.jsx";
-import NeedAssistance from "../components/features/NeedAssistance.jsx";
+import WhoTrustUs from "@features/WhoTrustsUs.jsx";
+import WorldMapInstallations from "@features/WorldMapInstallations.jsx";
+import Testimonials from "@features/Testimonials.jsx";
+import NeedAssistance from "@features/NeedAssistance.jsx";
 
 // slides (text only; rendered by Carousel below)
 const slides = [

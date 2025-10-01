@@ -2,12 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 
 // componenets
-import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/features/NeedAssistance";
-import { loadExternalScript } from "../hooks/loadExternalScript";
+import Reveal from "@ui/Reveal";
+import NeedAssistance from "@features/NeedAssistance";
+import { loadExternalScript } from "@hooks/loadExternalScript";
 
 // images
-import heroImg from "../assets/img/irisLinkedin.webp";
+import heroImg from "@assets/img/irisLinkedin.webp";
 
 /* config for the sociablekit widget */
 const EMBED_ID = "209419";

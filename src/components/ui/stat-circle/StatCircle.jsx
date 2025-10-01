@@ -1,7 +1,7 @@
 // imports
-import { useCountUp } from "../../../hooks/useCountUp.js";
-import Reveal from "../Reveal.jsx";
-import { useReveal } from "../../../hooks/useReveal.js";
+import { useCountUp } from "@hooks/useCountUp.js";
+import { useReveal } from "@hooks/useReveal.js";
+import Reveal from "@ui/Reveal";
 import StatCircleNumber from "./StatCircleNumber.jsx";
 
 export default function StatCircle({
