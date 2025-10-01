@@ -116,14 +116,14 @@ export default function Contact() {
             maskSize: "100% 100%",
           }}
         />
-        <div className="container max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative container max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <Reveal direction="down" distance={18} duration={2000}>
             <div className="eyebrow mb-3 text-white/70">
               IRIS NETWORK SYSTEMS
             </div>
           </Reveal>
           <Reveal direction="down" distance={22} duration={2000} delay={90}>
-            <h1 className="h1">Contact</h1>
+            <h1 className="h1 text-white">Contact</h1>
           </Reveal>
           <Reveal direction="down" distance={20} duration={2000} delay={140}>
             <p className="mt-3 text-white/70">
