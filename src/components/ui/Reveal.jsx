@@ -1,6 +1,6 @@
 // imports
 import React from "react";
-import { useReveal } from "../../lib/useReveal.js";
+import { useReveal } from "../../hooks/useReveal.js";
 
 /**
  * Props:

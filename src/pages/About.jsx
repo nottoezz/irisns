@@ -3,9 +3,9 @@ import React from "react";
 
 // components
 import Reveal from "../components/ui/Reveal";
-import ScrollSlide from "../components/ScrollSlide";
-import StatCircle from "../components/stat-circle";
-import Carousel from "../components/Carousel.jsx";
+import ScrollSlide from "../components/ui/ScrollSlide.jsx";
+import StatCircle from "../components/ui/stat-circle/index.js";
+import Carousel from "../components/ui/Carousel.jsx";
 
 // imgs
 import plusIcon from "../assets/utility/plusIcon.svg";
@@ -13,10 +13,10 @@ import connectedGlobe from "../assets/img/irisConnectedGlobe.webp";
 import whatWeDo from "../assets/img/irisWhatWeDo.webp";
 
 // components
-import WhoTrustUs from "../components/WhoTrustsUs.jsx";
-import WorldMapInstallations from "../components/WorldMapInstallations.jsx";
-import Testimonials from "../components/Testimonials.jsx";
-import NeedAssistance from "../components/NeedAssistance.jsx";
+import WhoTrustUs from "../components/features/WhoTrustsUs.jsx";
+import WorldMapInstallations from "../components/features/WorldMapInstallations.jsx";
+import Testimonials from "../components/features/Testimonials.jsx";
+import NeedAssistance from "../components/features/NeedAssistance.jsx";
 
 // slides (text only; rendered by Carousel below)
 const slides = [

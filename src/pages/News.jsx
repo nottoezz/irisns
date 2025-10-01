@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 
 // componenets
 import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/NeedAssistance";
-import { loadExternalScript } from "../lib/loadExternalScript";
+import NeedAssistance from "../components/features/NeedAssistance";
+import { loadExternalScript } from "../hooks/loadExternalScript";
 
 // images
 import heroImg from "../assets/img/irisLinkedin.webp";

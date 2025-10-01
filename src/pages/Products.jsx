@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 // components
 import Reveal from "../components/ui/Reveal";
-import ScrollSlide from "../components/ScrollSlide";
-import NeedAssistance from "../components/NeedAssistance";
+import ScrollSlide from "../components/ui/ScrollSlide";
+import NeedAssistance from "../components/features/NeedAssistance";
 
 // images
 import heroGlobe from "../assets/img/irispProductsHero.webp";

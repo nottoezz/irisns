@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 // componenets
 import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/NeedAssistance";
-import WhoTrustUs from "../components/WhoTrustsUs";
+import NeedAssistance from "../components/features/NeedAssistance";
+import WhoTrustUs from "../components/features/WhoTrustsUs";
 import DecorativeDots from "../components/ui/DecorativeDots";
 
 // imgs

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
-import Reveal from "./ui/Reveal";
+import Reveal from "../ui/Reveal";
 
 // simple pin svg, no external asset
 const pinSvg = encodeURIComponent(`

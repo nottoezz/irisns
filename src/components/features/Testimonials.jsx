@@ -2,11 +2,11 @@
 import React from "react";
 
 // logos
-import mtnLogo from "../assets/logos/mtnLogo.png";
-import voxLogo from "../assets/logos/voxTelecomLogo.svg";
-import itecLogo from "../assets/logos/itecWhiteLogo.svg";
-import vodacomLogo from "../assets/logos/vodacomWhiteLogo.svg";
-import placeHolder from "../assets/logos/placeHolder.svg";
+import mtnLogo from "@assets/logos/mtnLogo.png";
+import voxLogo from "@assets/logos/voxTelecomLogo.svg";
+import itecLogo from "@assets/logos/itecWhiteLogo.svg";
+import vodacomLogo from "@assets/logos/vodacomWhiteLogo.svg";
+import placeHolder from "@assets/logos/placeHolder.svg";
 
 /* tiny star */
 function Star({ className = "h-3 w-3" }) {

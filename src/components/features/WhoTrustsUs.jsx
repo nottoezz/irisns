@@ -1,13 +1,13 @@
 // imports
-import Reveal from "./ui/Reveal";
-import DecorativeDots from "./ui/DecorativeDots"
+import Reveal from "../ui/Reveal";
+import DecorativeDots from "../ui/DecorativeDots"
 
 // built-in logos (adjust paths if your layout differs)
-import logoLinkAfrica from "../assets/logos/link-africa.png";
-import logoThree6Five from "../assets/logos/three6five.png";
-import logoAllied from "../assets/logos/allied.png";
-import logoComsol from "../assets/logos/comsol.png";
-import logoTenet from "../assets/logos/tenet.png";
+import logoLinkAfrica from "@assets/logos/link-africa.png";
+import logoThree6Five from "@assets/logos/three6five.png";
+import logoAllied from "@assets/logos/allied.png";
+import logoComsol from "@assets/logos/comsol.png";
+import logoTenet from "@assets/logos/tenet.png";
 
 // default set if no `logos` prop is provided
 const DEFAULT_LOGOS = [

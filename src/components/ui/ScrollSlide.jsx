@@ -1,6 +1,6 @@
 // imports
 import React from "react";
-import { useScrollSlide } from "../lib/useScrollSlide";
+import { useScrollSlide } from "../../hooks/useScrollSlide";
 
 /**
  * scroll-slide

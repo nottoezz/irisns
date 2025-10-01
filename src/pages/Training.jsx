@@ -3,8 +3,8 @@ import { useEffect } from "react";
 
 // components
 import Reveal from "../components/ui/Reveal";
-import TrainingLevels from "../components/TrainingLevels";
-import NeedAssistance from "../components/NeedAssistance";
+import TrainingLevels from "../components/features/TrainingLevels";
+import NeedAssistance from "../components/features/NeedAssistance";
 
 // imgs
 import heroImg from "../assets/img/irisTrainingHero.webp";

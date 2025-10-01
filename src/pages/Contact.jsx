@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 
 // components
 import Reveal from "../components/ui/Reveal";
-import NeedAssistance from "../components/NeedAssistance";
-import ContactMap from "../components/ContactMap";
-import { loadExternalScript } from "../lib/loadExternalScript";
+import NeedAssistance from "../components/features/NeedAssistance";
+import ContactMap from "../components/features/ContactMap";
+import { loadExternalScript } from "../hooks/loadExternalScript";
 
 // imgs
 import heroImg from "../assets/img/irisContactHero.webp";

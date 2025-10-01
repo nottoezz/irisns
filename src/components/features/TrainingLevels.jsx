@@ -1,7 +1,7 @@
 // imports
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Reveal from "./ui/Reveal";
+import Reveal from "../ui/Reveal";
 
 // chevron icon used in accordions
 function Chevron({ open }) {
