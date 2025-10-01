@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop.jsx"
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -13,7 +14,7 @@ function AppInner() {
     <div className="background-generator">
       <div className="scroller">
         <Header />
-        <main>
+            <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
@@ -22,7 +23,6 @@ function AppInner() {
             <Route path="/news" element={<News />}/>
             <Route path="/contact" element={<Contact />}/>
           </Routes>
-        </main>
         <Footer />
       </div>
     </div>
