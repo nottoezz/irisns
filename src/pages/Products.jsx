@@ -114,24 +114,26 @@ export default function Products() {
           aria-hidden
         />
         <div className="absolute inset-0 bg-[#0a1324]/40" aria-hidden />
-        <div className="relative z-10 container mx-auto px-4 py-20 text-center lg:py-28">
-          <Reveal direction="down" duration={2000} distance={40} delay={100}>
-            <div className="mb-5 tracking-[.25em] text-white/70">PRODUCT</div>
-          </Reveal>
-          <Reveal direction="down" duration={2200} distance={40} delay={200}>
-            <h1 className="text-4xl font-extrabold text-white md:text-5xl lg:text-6xl">
-              Iris Network
-              <br className="hidden md:block" />
-              Monitoring Software
-            </h1>
-          </Reveal>
-          <Reveal direction="down" duration={2400} distance={40} delay={300}>
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-xl">
-              Iris Core is a complete network monitoring software solution that
-              aids enterprises and carrier-grade networks in their quest for
-              zero downtime and peak performance.
-            </p>
-          </Reveal>
+        <div className="relative z-10">
+          <div className="mx-auto w-[min(1200px,92vw)] px-6 md:px-8 text-center py-28 md:py-32 lg:py-40">
+            <Reveal direction="down" duration={2000} distance={40} delay={100}>
+              <div className="mb-5 tracking-[.25em] text-white/70">PRODUCT</div>
+            </Reveal>
+            <Reveal direction="down" duration={2200} distance={40} delay={200}>
+              <h1 className="h1">
+                Iris Network
+                <br className="hidden md:block" />
+                Monitoring Software
+              </h1>
+            </Reveal>
+            <Reveal direction="down" duration={2400} distance={40} delay={300}>
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-xl">
+                Iris Core is a complete network monitoring software solution that
+                aids enterprises and carrier-grade networks in their quest for
+                zero downtime and peak performance.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 

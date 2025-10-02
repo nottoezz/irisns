@@ -6,6 +6,7 @@ import Reveal from "@ui/Reveal";
 import ScrollSlide from "@ui/ScrollSlide.jsx";
 import StatCircle from "@ui/stat-circle/index.js";
 import Carousel from "@ui/Carousel.jsx";
+import ColorBlooms from "@ui/ColorBlooms";
 
 // imgs
 import plusIcon from "@assets/utility/plusIcon.svg";
@@ -61,8 +62,16 @@ export default function About() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#111224] pt-20">
-      {/* hero */}
+    <main className="relative min-h-screen overflow-hidden bg-[#111224] pt-20">
+      <div className="relative z-10">
+<ColorBlooms
+  items={[
+    { hue: "cyan",   size: "min(1600px, 90vw)", top: "4%", right: "3%", falloff: "84%", blurPx: 96 },
+    { hue: "violet", size: 1400, bottom: "4%", left: "6%",  falloff: "86%", blurPx: 96 },
+    { hue: "rose",   size: 1200, bottom: "-6%", left: "48%", falloff: "88%", blurPx: 110 },
+    { hue: "lime",   size: 1000, top: "36%", left: "8%",    falloff: "82%", blurPx: 80 },
+  ]}
+/>
       <section
         className="relative pt-40 md:pt-20 pb-16 md:pb-20 min-h-[960px] md:min-h-[1020px]"
         aria-labelledby="about-hero-title"
@@ -250,6 +259,9 @@ export default function About() {
       <section>
         <NeedAssistance />
       </section>
+      </div>
     </main>
   );
 }
+
+

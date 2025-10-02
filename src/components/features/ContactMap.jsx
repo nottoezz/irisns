@@ -2,6 +2,7 @@
 import { useEffect, useMemo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import Reveal from "@ui/Reveal";
 
 // simple pin svg, no external asset
@@ -125,6 +126,7 @@ export default function ContactMap({
       </div>
 
       {/* map */}
+      <Reveal direction="down" duration={2000}>
       <div className="iris-map relative mx-auto max-w-[1100px] rounded-2xl overflow-hidden border border-white/10 shadow-xl">
         <MapContainer
           center={center}
@@ -143,11 +145,11 @@ export default function ContactMap({
               </div>
             </Popup>
           </Marker>
-          <OffsetCenter fractionFromTop={1 / 3} />
+          <OffsetCenter fractionFromTop={2 / 5} />
         </MapContainer>
 
         {/* floating address card */}
-        <div className="pointer-events-none absolute left-1/2 bottom-6 -translate-x-1/2 z-[500]">
+        <div className="pointer-events-none absolute left-1/2 bottom-6 -translate-x-1/2 z-[1]">
           <a
             href={gmapsUrl}
             target="_blank"
@@ -181,6 +183,7 @@ export default function ContactMap({
           </a>
         </div>
       </div>
+      </Reveal>
 
       <style dangerouslySetInnerHTML={{ __html: scopedCss }} />
     </section>

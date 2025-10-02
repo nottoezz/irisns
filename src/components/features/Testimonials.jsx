@@ -12,13 +12,22 @@ import placeHolder from "@assets/logos/placeHolder.svg";
 function Star({ className = "h-3 w-3" }) {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true" className={className}>
-      <path d="M10 1.8l2.3 4.7 5.2.8-3.8 3.7.9 5.2L10 13.9l-4.6 2.4.9-5.2L2.5 7.3l5.2-.8L10 1.8z" fill="currentColor" />
+      <path
+        d="M10 1.8l2.3 4.7 5.2.8-3.8 3.7.9 5.2L10 13.9l-4.6 2.4.9-5.2L2.5 7.3l5.2-.8L10 1.8z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
 /* testimonial block */
-const Testimonial = React.memo(function Testimonial({ logo, quote, author, role, rating = 5 }) {
+const Testimonial = React.memo(function Testimonial({
+  logo,
+  quote,
+  author,
+  role,
+  rating = 5,
+}) {
   return (
     <div className="grid h-full grid-rows-[auto,1fr,auto] px-6">
       {/* logo */}
@@ -102,10 +111,12 @@ export default function Testimonials({
   items = [],
   autoMs = 8000,
   className = "",
-  title = "What our customers say",
 }) {
   // data (unique source list)
-  const data = React.useMemo(() => (items.length ? items : DEFAULT_ITEMS), [items]);
+  const data = React.useMemo(
+    () => (items.length ? items : DEFAULT_ITEMS),
+    [items]
+  );
   const n = data.length;
 
   // track with two edge clones on both sides: [secondLast, last, ...data, first, second]
@@ -183,13 +194,6 @@ export default function Testimonials({
       aria-labelledby="testimonials-title"
     >
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-8">
-        <h2
-          id="testimonials-title"
-          className="text-center font-extrabold leading-[1.05] tracking-[-0.01em] text-white text-[34px] md:text-[42px]"
-        >
-          {title}
-        </h2>
-
         {/* viewport (two visible) */}
         <div
           tabIndex={0}
@@ -205,7 +209,9 @@ export default function Testimonials({
           {/* track: each card is 50% width */}
           <div
             onTransitionEnd={onTransitionEnd}
-            className={`flex ${anim ? "transition-transform duration-700 ease-out" : ""}`}
+            className={`flex ${
+              anim ? "transition-transform duration-700 ease-out" : ""
+            }`}
             style={{ transform: `translateX(-${idx * 50}%)` }}
           >
             {track.map((t, i) => (
@@ -227,7 +233,9 @@ export default function Testimonials({
                     restartTimer();
                   }}
                   className={`h-2 w-2 rounded-full transition-opacity ${
-                    i === activeDot ? "bg-blue-400 opacity-100" : "bg-white opacity-70"
+                    i === activeDot
+                      ? "bg-blue-400 opacity-100"
+                      : "bg-white opacity-70"
                   }`}
                   aria-label={`go to testimonial ${i + 1}`}
                   aria-current={i === activeDot}
