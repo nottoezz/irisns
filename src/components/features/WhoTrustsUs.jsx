@@ -81,8 +81,8 @@ export default function WhoTrustUs({
       <div className="mt-10 px-6 md:px-12 xl:px-20">
         <LogoMarquee
           items={data}
-          speedPxPerSec={80}
-          gapPx={64}
+          speedPxPerSec={50}
+          gapPx={55}
           fadeSizePx={120}
           linkTarget={linkTarget}
         />
@@ -93,7 +93,7 @@ export default function WhoTrustUs({
 
 function LogoMarquee({
   items,
-  gapPx = 64,
+  gapPx = 50,
   speedPxPerSec = 80,
   linkTarget = "_blank",
   fadeSizePx = 120,
@@ -187,7 +187,10 @@ function LogoMarquee({
         className="flex will-change-transform"
         style={{
           width: "var(--track-w)",
-          animation: `marquee-left ${duration}s linear infinite`,
+          animationName: "marquee-left",
+          animationDuration: `${duration}s`,
+          animationTimingFunction: "linear",
+          animationIterationCount: "infinite",
           animationPlayState: "var(--paused, running)",
         }}
       >
@@ -255,3 +258,4 @@ function LogoRow({ data, innerRef, gapPx, linkTarget, style }) {
     </ul>
   );
 }
+

@@ -74,12 +74,12 @@ export default function StatCircleNumber({
               direction="down"
               duration={3000}
               distance={40}
-              delay={100}
+              delay={300}
               className="block"
             >
               <span
                 aria-hidden
-                className="absolute pt-4 right-0 top-0 flex justify-center pointer-events-none"
+                className="absolute right-0 top-0 flex justify-center pointer-events-none"
                 style={{
                   width: `${plusIconWidthCh}ch`,
                   lineHeight: 1,
@@ -87,7 +87,7 @@ export default function StatCircleNumber({
               >
                 <span
                   className="flex w-full items-center justify-center pointer-events-none"
-                  style={{ transform: "translateY(-17px)" }}
+                  style={{ transform: "translateY(-10px)" }}
                 >
                   {plusIcon}
                 </span>
@@ -104,12 +104,12 @@ export default function StatCircleNumber({
           direction="down"
           duration={3000}
           distance={40}
-          delay={100}
+          delay={300}
           className="block pointer-events-none"
         >
           <span
             aria-hidden
-            className={`absolute pointer-events-none -translate-y-2 ${
+            className={`absolute pointer-events-none ${
               unitSide === "left"
                 ? "-left-6 md:-left-7"
                 : "-right-6 md:-right-7"

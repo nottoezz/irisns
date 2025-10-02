@@ -7,9 +7,8 @@ const Products = lazy(() => import("@/pages/Products"));
 const About = lazy(() => import("@/pages/About"));
 const Training = lazy(() => import("@/pages/Training"));
 const Contact = lazy(() => import("@/pages/Contact"));
-const News = lazy(() => import("@/pages/news"));
+const News = lazy(() => import("@/pages/News"));
 
-// plain element, not a component
 const loadingEl = <div className="p-8 opacity-70">Loading…</div>;
 
 export const router = createBrowserRouter([

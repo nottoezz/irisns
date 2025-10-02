@@ -20,47 +20,48 @@ export default function Header() {
 
   // scroll state
   useEffect(() => {
-    const isScrollableY = (el) => {
-      if (!el) return false;
-      const s = getComputedStyle(el);
-      return (
-        (s.overflowY === "auto" || s.overflowY === "scroll") &&
-        el.scrollHeight > el.clientHeight
-      );
-    };
+    const scrollerEl = document.querySelector(".scroller");
+    const mainEl = document.querySelector("main");
 
-    const candidates = [
-      document.querySelector("main"),
-      document.getElementById("app"),
-      document.getElementById("root")?.parentElement,
-      document.documentElement,
-      document.body,
-    ].filter(Boolean);
-
-    let scroller = window;
-    for (const el of candidates) {
-      if (isScrollableY(el)) {
-        scroller = el;
-        break;
-      }
+    const targets = new Set([window]);
+    if (scrollerEl && scrollerEl !== window) {
+      targets.add(scrollerEl);
+    }
+    if (mainEl && mainEl !== scrollerEl) {
+      targets.add(mainEl);
+    }
+    const docEl = document.scrollingElement || document.documentElement;
+    if (docEl && docEl !== document.body) {
+      targets.add(docEl);
+    }
+    if (document.body) {
+      targets.add(document.body);
     }
 
-    const currentTop = () =>
-      scroller === window
-        ? window.pageYOffset || document.documentElement.scrollTop || 0
-        : scroller.scrollTop;
-
-    const onScroll = () => setScrolled(currentTop() > 10);
-
-    onScroll();
-    const target = scroller === window ? window : scroller;
-    target.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      target.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+    const readTop = () => {
+      const winTop = window.pageYOffset || 0;
+      const docTop = docEl ? docEl.scrollTop : 0;
+      const bodyTop = document.body ? document.body.scrollTop : 0;
+      const scrollerTop = scrollerEl ? scrollerEl.scrollTop : 0;
+      const mainTop = mainEl ? mainEl.scrollTop : 0;
+      return Math.max(winTop, docTop, bodyTop, scrollerTop, mainTop);
     };
-  }, [pathname]);
+
+    const update = () => setScrolled(readTop() > 10);
+
+    update();
+    targets.forEach((target) => {
+      target.addEventListener("scroll", update, { passive: true });
+    });
+    window.addEventListener("resize", update);
+
+    return () => {
+      targets.forEach((target) => {
+        target.removeEventListener("scroll", update);
+      });
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   // close on route change + esc
   useEffect(() => setOpen(false), [pathname]);
@@ -92,7 +93,7 @@ export default function Header() {
         <Link
           to="/"
           className="flex items-center gap-2"
-          aria-label="Iris Network Systems — home"
+          aria-label="Iris Network Systems - home"
         >
           <img
             src={logo}
@@ -142,7 +143,7 @@ export default function Header() {
           aria-label="toggle navigation"
           onClick={() => setOpen((v) => !v)}
         >
-          ☰
+          ?
         </button>
       </div>
 
@@ -190,3 +191,6 @@ export default function Header() {
     </header>
   );
 }
+
+
+
