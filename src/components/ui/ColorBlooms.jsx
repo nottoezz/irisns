@@ -1,6 +1,3 @@
-// @ui/ColorBlooms.jsx
-import React from "react";
-
 /**
  * items: [{
  *   size?: number,
@@ -12,18 +9,31 @@ import React from "react";
  *   opacity?: number, // defaults 0.7
  * }]
  *
- * Tip: Ensure some ancestor (often <main> or <body>) has class "background-generator"
  * so the CSS variables --cyan/--violet/--rose/--lime are available.
  */
+
 export default function ColorBlooms({ items = [], className = "" }) {
   const cssVarForHue = (hue) => {
     if (!hue) return null;
-    // these come from your .background-generator CSS
     const map = {
       cyan: "var(--cyan)",
       violet: "var(--violet)",
       rose: "var(--rose)",
       lime: "var(--lime)",
+      blue: "var(--blue)",
+      indigo: "var(--indigo)",
+      sky: "var(--sky)",
+      teal: "var(--teal)",
+      emerald: "var(--emerald)",
+      green: "var(--green)",
+      yellow: "var(--yellow)",
+      amber: "var(--amber)",
+      orange: "var(--orange)",
+      red: "var(--red)",
+      fuchsia: "var(--fuchsia)",
+      pink: "var(--pink)",
+      purple: "var(--purple)",
+      magenta: "var(--magenta)",
     };
     return map[hue] ?? null;
   };
@@ -35,7 +45,7 @@ export default function ColorBlooms({ items = [], className = "" }) {
     >
       {items.map((b, i) => {
         const hueVar = cssVarForHue(b.hue);
-        const stopColor = b.color ?? hueVar ?? "rgba(56,189,248,.18)"; 
+        const stopColor = b.color ?? hueVar ?? "rgba(56,189,248,.18)";
         return (
           <div
             key={i}

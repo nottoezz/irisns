@@ -56,7 +56,6 @@ const slides = [
 ];
 
 export default function About() {
-  // page title
   React.useEffect(() => {
     document.title = "About - Iris Network Systems";
   }, []);
@@ -64,14 +63,15 @@ export default function About() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] pt-20">
       <div className="relative z-10">
-<ColorBlooms
-  items={[
-    { hue: "cyan",   size: "min(1600px, 90vw)", top: "4%", right: "3%", falloff: "84%", blurPx: 96 },
-    { hue: "violet", size: 1400, bottom: "4%", left: "6%",  falloff: "86%", blurPx: 96 },
-    { hue: "rose",   size: 1200, bottom: "-6%", left: "48%", falloff: "88%", blurPx: 110 },
-    { hue: "lime",   size: 1000, top: "36%", left: "8%",    falloff: "82%", blurPx: 80 },
-  ]}
-/>
+      <ColorBlooms
+        items={[
+          { hue: "blue", size: 2200, top: "55%",  right: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "sky", size: 2800, top: "10%",  right: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "violet", size: 1700, bottom: "4%", left: "65%", falloff: "84%", blurPx: 110 },
+          { hue: "rose", size: 1500, bottom: "-6%", left: "48%", falloff: "84%", blurPx: 110 },
+          { hue: "lime", size: 1300, top: "36%", left: "65%", falloff: "84%", blurPx: 110 },
+        ]}
+      />
       <section
         className="relative pt-40 md:pt-20 pb-16 md:pb-20 min-h-[960px] md:min-h-[1020px]"
         aria-labelledby="about-hero-title"
