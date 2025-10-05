@@ -83,8 +83,8 @@ const Card = ({ n, title, copy }) => (
     className={[
       "group h-full",
       "min-h-[460px] md:min-h-[440px] lg:min-h-[420px]",
-      "rounded-2xl border border-white/10 bg-white/[.045] backdrop-blur-[2px]",
-      "shadow-[0_18px_50px_rgba(0,0,0,.30)]",
+      "rounded-2xl border border-white/10 bg-white/[.035]",
+      "shadow-[0_12px_30px_rgba(0,0,0,.22)]",
       "px-7 py-7 flex flex-col relative overflow-hidden",
       "transition-all duration-500 lg:hover:-translate-y-1",
     ].join(" ")}
@@ -132,92 +132,40 @@ export default function IrisNetflow() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] text-white">
       <ColorBlooms
-        className="absolute inset-0 z-[1]"
+        className="absolute inset-0 z-[1] hidden md:block"
         items={[
-          // left arcs
+          // softer bloom layout
           {
             hue: "blue",
-            size: "min(3600px, 190vw)",
-            top: "10%",
-            left: "10%",
+            size: "min(2200px, 140vw)",
+            top: "16%",
+            left: "-8%",
             blend: "screen",
-            opacity: 0.65,
-            falloff: "90%",
-            blurPx: 140,
-          },
-          {
-            hue: "cyan",
-            size: "min(2600px, 150vw)",
-            top: "25%",
-            left: "18%",
-            blend: "screen",
-            opacity: 0.55,
-            falloff: "88%",
-            blurPx: 130,
+            opacity: 0.5,
           },
           {
             hue: "teal",
-            size: "min(1800px, 110vw)",
-            top: "55%",
-            left: "10%",
+            size: "min(1700px, 115vw)",
+            top: "58%",
+            left: "4%",
             blend: "screen",
-            opacity: 0.42,
-            falloff: "86%",
-            blurPx: 110,
+            opacity: 0.34,
           },
-
-          // right arcs
           {
             hue: "indigo",
-            size: "min(3600px, 190vw)",
-            top: "16%",
-            right: "42%",
+            size: "min(2200px, 140vw)",
+            top: "10%",
+            right: "-12%",
             blend: "screen",
-            opacity: 0.6,
-            falloff: "90%",
-            blurPx: 140,
-          },
-          {
-            hue: "violet",
-            size: "min(2400px, 140vw)",
-            top: "28%",
-            right: "42%",
-            blend: "screen",
-            opacity: 0.5,
-            falloff: "88%",
-            blurPx: 130,
+            opacity: 0.46,
           },
           {
             hue: "fuchsia",
-            size: "min(1800px, 110vw)",
-            bottom: "10%",
-            right: "8%",
+            size: "min(1500px, 100vw)",
+            bottom: "-6%",
+            right: "6%",
             blend: "screen",
-            opacity: 0.4,
-            falloff: "86%",
-            blurPx: 110,
-          },
-
-          // light accents
-          {
-            hue: "amber",
-            size: "min(1300px, 90vw)",
-            top: "42%",
-            left: "6%",
-            blend: "screen",
-            opacity: 0.28,
-            falloff: "86%",
-            blurPx: 95,
-          },
-          {
-            hue: "lime",
-            size: "min(1200px, 85vw)",
-            bottom: "6%",
-            right: "10%",
-            blend: "screen",
-            opacity: 0.25,
-            falloff: "86%",
-            blurPx: 95,
+            opacity: 0.34,
           },
         ]}
       />
@@ -294,6 +242,8 @@ export default function IrisNetflow() {
                 <img
                   src={netflowHero}
                   alt="Iris Netflow overview"
+                  width={1400}
+                  height={900}
                   className="block h-auto w-full select-none pointer-events-none object-contain"
                   loading="lazy"
                 />
@@ -310,14 +260,10 @@ export default function IrisNetflow() {
                 src={netflowHero}
                 alt=""
                 aria-hidden
+                width={1400}
+                height={900}
                 className="block h-full w-full object-contain opacity-95"
                 loading="lazy"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.95) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
-                  maskImage:
-                    "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.95) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
-                }}
               />
             </Reveal>
           </ScrollSlide>

@@ -61,8 +61,8 @@ const Card = ({ n, title, copy, bullets, foot }) => (
     className={[
       "group h-full flex flex-col",
       "min-h-[460px] md:min-h-[440px] lg:min-h-[420px]",
-      "rounded-2xl border border-white/10 bg-white/[.045] backdrop-blur-[2px]",
-      "shadow-[0_18px_50px_rgba(0,0,0,.30)]",
+      "rounded-2xl border border-white/10 bg-white/[.035]",
+      "shadow-[0_12px_30px_rgba(0,0,0,.22)]",
       "px-7 py-7 relative overflow-hidden transition-all duration-500 lg:hover:-translate-y-1",
     ].join(" ")}
   >
@@ -119,16 +119,41 @@ export default function IrisMaps() {
     <main className="relative min-h-screen overflow-hidden bg-[#111224] text-white">
       {/* Blooms */}
       <ColorBlooms
-        className="absolute inset-0 z-[1]"
+        className="absolute inset-0 z-[1] hidden md:block"
         items={[
-          { hue: "blue",   size: "min(3600px,190vw)", top: "10%", left: "10%", blend: "screen", opacity: 0.65, falloff: "90%", blurPx: 140 },
-          { hue: "cyan",   size: "min(2600px,150vw)", top: "25%", left: "18%", blend: "screen", opacity: 0.55, falloff: "88%", blurPx: 130 },
-          { hue: "teal",   size: "min(1800px,110vw)", top: "55%", left: "10%", blend: "screen", opacity: 0.42, falloff: "86%", blurPx: 110 },
-          { hue: "indigo", size: "min(3600px,190vw)", top: "16%", right: "42%", blend: "screen", opacity: 0.6,  falloff: "90%", blurPx: 140 },
-          { hue: "violet", size: "min(2400px,140vw)", top: "28%", right: "42%", blend: "screen", opacity: 0.5,  falloff: "88%", blurPx: 130 },
-          { hue: "fuchsia",size: "min(1800px,110vw)", bottom: "10%", right: "8%", blend: "screen", opacity: 0.4,  falloff: "86%", blurPx: 110 },
-          { hue: "amber",  size: "min(1300px,90vw)",  top: "42%", left: "6%",  blend: "screen", opacity: 0.28, falloff: "86%", blurPx: 95 },
-          { hue: "lime",   size: "min(1200px,85vw)",  bottom: "6%", right: "10%", blend: "screen", opacity: 0.25, falloff: "86%", blurPx: 95 },
+          // softer bloom layout
+          {
+            hue: "blue",
+            size: "min(2200px, 140vw)",
+            top: "14%",
+            left: "-12%",
+            blend: "screen",
+            opacity: 0.5,
+          },
+          {
+            hue: "cyan",
+            size: "min(1600px, 110vw)",
+            top: "54%",
+            left: "0%",
+            blend: "screen",
+            opacity: 0.36,
+          },
+          {
+            hue: "violet",
+            size: "min(2200px, 140vw)",
+            top: "10%",
+            right: "-14%",
+            blend: "screen",
+            opacity: 0.45,
+          },
+          {
+            hue: "fuchsia",
+            size: "min(1500px, 100vw)",
+            bottom: "-6%",
+            right: "4%",
+            blend: "screen",
+            opacity: 0.32,
+          },
         ]}
       />
 
@@ -212,14 +237,10 @@ export default function IrisMaps() {
                     src={mapsHero}
                     alt=""
                     aria-hidden
+                    width={1400}
+                    height={900}
                     className="block h-full w-full object-contain opacity-95"
                     loading="lazy"
-                    style={{
-                      WebkitMaskImage:
-                        "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.9) 8%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)",
-                      maskImage:
-                        "linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.9) 8%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%)",
-                    }}
                   />
                 </Reveal>
               </ScrollSlide>

@@ -110,19 +110,20 @@ export default function Carousel({
       {/* slide stage */}
       <div className={`relative ${minHeightClass}`}>
         {slides.map((node, idx) => {
-          const content =
-            revealProps === false ? (
-              node
-            ) : (
-              <Reveal
-                direction={revealProps.direction ?? "down"}
-                duration={revealProps.duration ?? 2800}
-                distance={revealProps.distance ?? 20}
-                delay={revealProps.delay ?? 0}
-              >
-                {node}
-              </Reveal>
-            );
+          const isActive = idx === i;
+          const shouldReveal = revealProps !== false && isActive;
+          const content = shouldReveal ? (
+            <Reveal
+              direction={revealProps.direction ?? "down"}
+              duration={revealProps.duration ?? 2800}
+              distance={revealProps.distance ?? 20}
+              delay={revealProps.delay ?? 0}
+            >
+              {node}
+            </Reveal>
+          ) : (
+            node
+          );
 
           return (
             <div
@@ -134,6 +135,7 @@ export default function Carousel({
               className={`absolute inset-0 transition-opacity duration-500 ${
                 idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
+              style={{ willChange: 'opacity' }}
             >
               {content}
             </div>
