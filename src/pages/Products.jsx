@@ -1,5 +1,5 @@
 // imports
-import { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 // components
@@ -37,8 +37,7 @@ const SECTIONS = [
     id: "iris-netflow",
     index: "02",
     title: "Iris Netflow",
-    copy:
-      "Netflow data is exported from networked devices to Iris Netflow Collectors, which are distributed around the network. This data can then be accessed seamlessly from the Centralized Iris Portal.",
+    copy: "Netflow data is exported from networked devices to Iris Netflow Collectors, which are distributed around the network. This data can then be accessed seamlessly from the Centralized Iris Portal.",
     ctaTo: "/products/irisnetflow",
     img: netflowGraphic,
     delay: 200,
@@ -47,8 +46,7 @@ const SECTIONS = [
     id: "iris-maps",
     index: "03",
     title: "Iris Maps",
-    copy:
-      "Iris Maps is a network tool that visually displays important network information. Displayed data is continuously updated to reflect the alarm status of your network on an automatically created HTML5 canvas.",
+    copy: "Iris Maps is a network tool that visually displays important network information. Displayed data is continuously updated to reflect the alarm status of your network on an automatically created HTML5 canvas.",
     ctaTo: "/products/irismaps",
     img: mapsGraphic,
     delay: 400,
@@ -65,34 +63,6 @@ function useScrollToSection() {
   }, []);
 }
 
-// observe which section is in view
-function useScrollSpy(ids, { offset = 120 } = {}) {
-  const [active, setActive] = useState(ids[0]);
-  const observer = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: `-${offset}px 0px -60% 0px`,
-      threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
-    };
-    observer.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, options);
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.current.observe(el);
-    });
-
-    return () => observer.current?.disconnect();
-  }, [ids, offset]);
-
-  return active;
-}
-
 // page
 export default function Products() {
   useEffect(() => {
@@ -101,13 +71,14 @@ export default function Products() {
 
   const headerOffset = 88;
   const scrollTo = useScrollToSection();
-  const ids = useMemo(() => SECTIONS.map((s) => s.id), []);
-  const activeId = useScrollSpy(ids, { offset: headerOffset + 12 });
 
   return (
     <main className="min-h-screen">
       {/* hero */}
-      <section className="relative overflow-hidden" style={{ minHeight: "80vh" }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ minHeight: "80vh" }}
+      >
         <div
           className="absolute inset-0 bg-cover bg-[20%_40%]"
           style={{ backgroundImage: `url(${heroGlobe})` }}
@@ -128,9 +99,9 @@ export default function Products() {
             </Reveal>
             <Reveal direction="down" duration={2400} distance={40} delay={300}>
               <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-xl">
-                Iris Core is a complete network monitoring software solution that
-                aids enterprises and carrier-grade networks in their quest for
-                zero downtime and peak performance.
+                Iris Core is a complete network monitoring software solution
+                that aids enterprises and carrier-grade networks in their quest
+                for zero downtime and peak performance.
               </p>
             </Reveal>
           </div>
@@ -148,7 +119,6 @@ export default function Products() {
                   {/* rail buttons */}
                   <nav className="space-y-3">
                     {SECTIONS.map((s) => {
-                      const isActive = activeId === s.id;
                       return (
                         <Reveal
                           key={s.id}
@@ -159,10 +129,7 @@ export default function Products() {
                         >
                           <button
                             onClick={() => scrollTo(s.id)}
-                            className={[
-                              "w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-left shadow-sm transition-all hover:bg-slate-100",
-                              isActive ? "ring-2 ring-blue-500/60" : "ring-0",
-                            ].join(" ")}
+                            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 text-left shadow-sm transition-all hover:bg-slate-100"
                           >
                             <div className="text-sm font-semibold tracking-wide text-blue-600">
                               {s.index}
@@ -177,7 +144,12 @@ export default function Products() {
                   </nav>
 
                   {/* footprint card */}
-                  <Reveal direction="left" duration={2200} delay={600} distance={40}>
+                  <Reveal
+                    direction="left"
+                    duration={2200}
+                    delay={600}
+                    distance={40}
+                  >
                     <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-5">
                       <h3 className="mb-3 text-2xl font-extrabold text-slate-900">
                         Operating across&nbsp;9
@@ -230,18 +202,42 @@ export default function Products() {
                       <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
                         {/* text */}
                         <div>
-                          <Reveal direction="down" duration={2400} distance={40} delay={100}>
-                            <div className="font-semibold text-blue-600">{s.index}</div>
+                          <Reveal
+                            direction="down"
+                            duration={2400}
+                            distance={40}
+                            delay={100}
+                          >
+                            <div className="font-semibold text-blue-600">
+                              {s.index}
+                            </div>
                           </Reveal>
-                          <Reveal direction="down" duration={2400} distance={40} delay={200}>
+                          <Reveal
+                            direction="down"
+                            duration={2400}
+                            distance={40}
+                            delay={200}
+                          >
                             <h2 className="mt-2 text-3xl font-extrabold text-slate-900 lg:text-5xl">
                               {s.title}
                             </h2>
                           </Reveal>
-                          <Reveal direction="down" duration={2400} distance={40} delay={300}>
-                            <p className="mt-5 max-w-prose leading-relaxed text-slate-700">{s.copy}</p>
+                          <Reveal
+                            direction="down"
+                            duration={2400}
+                            distance={40}
+                            delay={300}
+                          >
+                            <p className="mt-5 max-w-prose leading-relaxed text-slate-700">
+                              {s.copy}
+                            </p>
                           </Reveal>
-                          <Reveal direction="down" duration={2400} distance={40} delay={400}>
+                          <Reveal
+                            direction="down"
+                            duration={2400}
+                            distance={40}
+                            delay={400}
+                          >
                             <div className="mt-8">
                               <Link
                                 to={s.ctaTo}
@@ -255,7 +251,12 @@ export default function Products() {
 
                         {/* image */}
                         <div className="relative lg:mt-6">
-                          <Reveal direction="right" duration={2400} distance={40} delay={300}>
+                          <Reveal
+                            direction="right"
+                            duration={2400}
+                            distance={40}
+                            delay={300}
+                          >
                             <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
                               <img
                                 src={s.img}
@@ -332,7 +333,11 @@ export default function Products() {
         {/* blue rings */}
         <div
           className="pointer-events-none absolute z-20 hidden md:block"
-          style={{ left: "30vw", top: "20vh", transform: "translateX(var(--img-shift))" }}
+          style={{
+            left: "30vw",
+            top: "20vh",
+            transform: "translateX(var(--img-shift))",
+          }}
           aria-hidden
         >
           <div className="flex flex-col items-center gap-7">
@@ -373,12 +378,22 @@ export default function Products() {
             <div className="hidden lg:col-span-6 lg:block" />
 
             <div className="text-center lg:col-span-6 lg:text-left">
-              <Reveal direction="right" duration={2000} distance={40} delay={100}>
-                <div className="mb-4 pb-20 text-3xl font-bold tracking-[.5em] uppercase text-white/80">
+              <Reveal
+                direction="right"
+                duration={2000}
+                distance={40}
+                delay={100}
+              >
+                <div className="mb-1 pb-20 text-3xl font-bold tracking-[.5em] uppercase text-white/80">
                   why choose iris?
                 </div>
               </Reveal>
-              <Reveal direction="right" duration={2400} distance={40} delay={200}>
+              <Reveal
+                direction="right"
+                duration={2400}
+                distance={40}
+                delay={200}
+              >
                 <h2 className="text-4xl font-extrabold leading-tight text-white md:text-5xl">
                   Using robust and scalable data collection methods we ensure
                   your network data is always at your fingertips.
@@ -387,7 +402,11 @@ export default function Products() {
 
               <Reveal>
                 <div className="mt-8">
-                  <a href="/about" className="btn btn-blue" aria-label="learn more about iris">
+                  <a
+                    href="/about"
+                    className="btn btn-blue"
+                    aria-label="learn more about iris"
+                  >
                     Learn more
                   </a>
                 </div>
@@ -399,7 +418,7 @@ export default function Products() {
 
       {/* need assistance */}
       <section>
-        <NeedAssistance className="relative -mb-px bg-[#0b1021] pt-50" />
+        <NeedAssistance className="relative -mb-px bg-[#0b1021]" />
       </section>
     </main>
   );

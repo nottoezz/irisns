@@ -6,10 +6,11 @@ import { dirname, resolve } from "node:path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// https://vite.dev/config/
-export default defineConfig({
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: '/irisns/',
+  base: mode === "production" ? "/irisns/" : "/",
+  appType: "spa",
   server: {
     host: "0.0.0.0",
     port: 5173,
@@ -25,7 +26,7 @@ export default defineConfig({
       "@app": resolve(__dirname, "src/app"),
       "@hooks": resolve(__dirname, "src/hooks"),
       "@lib": resolve(__dirname, "src/lib"),
-      "@assets": resolve(__dirname, "src/assets")
+      "@assets": resolve(__dirname, "src/assets"),
     },
   },
-});
+}));
