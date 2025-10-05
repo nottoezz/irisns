@@ -6,7 +6,7 @@ const Home = lazy(() => import("@/pages/Home"));
 const Products = lazy(() => import("@/pages/Products"));
 const IrisCore = lazy(() => import("@/pages/products/IrisCore"));
 const IrisNetFlow = lazy(() => import("@/pages/products/IrisNetflow"));
-const IrisMaps = lazy(() => import("@/pages/products/IrisMaps"))
+const IrisMaps = lazy(() => import("@/pages/products/IrisMaps"));
 const About = lazy(() => import("@/pages/About"));
 const Training = lazy(() => import("@/pages/Training"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
-            {
+      {
         path: "/products/iriscore",
         element: (
           <Suspense fallback={loadingEl}>
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
-                  {
+      {
         path: "/products/irisnetflow",
         element: (
           <Suspense fallback={loadingEl}>
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
-                        {
+      {
         path: "/products/irismaps",
         element: (
           <Suspense fallback={loadingEl}>
@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
           </Suspense>
         ),
       },
-            {
+      {
         path: "/news",
         element: (
           <Suspense fallback={loadingEl}>
@@ -93,5 +93,6 @@ export const router = createBrowserRouter([
       },
       { path: "*", element: <Navigate to="/" replace /> },
     ],
+    basename: import.meta.env.BASE_URL || "/irisns/",
   },
 ]);
