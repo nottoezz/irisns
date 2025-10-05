@@ -4,6 +4,9 @@ import Layout from "./Layout";
 
 const Home = lazy(() => import("@/pages/Home"));
 const Products = lazy(() => import("@/pages/Products"));
+const IrisCore = lazy(() => import("@/pages/products/IrisCore"));
+const IrisNetFlow = lazy(() => import("@/pages/products/IrisNetflow"));
+const IrisMaps = lazy(() => import("@/pages/products/IrisMaps"))
 const About = lazy(() => import("@/pages/About"));
 const Training = lazy(() => import("@/pages/Training"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -29,6 +32,30 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={loadingEl}>
             <Products />
+          </Suspense>
+        ),
+      },
+            {
+        path: "/products/iriscore",
+        element: (
+          <Suspense fallback={loadingEl}>
+            <IrisCore />
+          </Suspense>
+        ),
+      },
+                  {
+        path: "/products/irisnetflow",
+        element: (
+          <Suspense fallback={loadingEl}>
+            <IrisNetFlow />
+          </Suspense>
+        ),
+      },
+                        {
+        path: "/products/irismaps",
+        element: (
+          <Suspense fallback={loadingEl}>
+            <IrisMaps />
           </Suspense>
         ),
       },

@@ -29,7 +29,7 @@ const SECTIONS = [
         right information to the right people at the right time.
       </>
     ),
-    ctaTo: "/products/iris-core",
+    ctaTo: "/products/iriscore",
     img: coreGraphic,
     delay: 100,
   },
@@ -39,7 +39,7 @@ const SECTIONS = [
     title: "Iris Netflow",
     copy:
       "Netflow data is exported from networked devices to Iris Netflow Collectors, which are distributed around the network. This data can then be accessed seamlessly from the Centralized Iris Portal.",
-    ctaTo: "/products/iris-netflow",
+    ctaTo: "/products/irisnetflow",
     img: netflowGraphic,
     delay: 200,
   },
@@ -49,7 +49,7 @@ const SECTIONS = [
     title: "Iris Maps",
     copy:
       "Iris Maps is a network tool that visually displays important network information. Displayed data is continuously updated to reflect the alarm status of your network on an automatically created HTML5 canvas.",
-    ctaTo: "/products/iris-maps",
+    ctaTo: "/products/irismaps",
     img: mapsGraphic,
     delay: 400,
   },

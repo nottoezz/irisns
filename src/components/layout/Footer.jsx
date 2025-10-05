@@ -28,9 +28,9 @@ export default function Footer() {
           <div>
             <h4 className="mb-5 text-lg font-semibold text-white">services</h4>
             <ul className="space-y-3 text-white/80">
-              <li><Link to="/products/iris-core" className="hover:text-white">iris core</Link></li>
-              <li><Link to="/products/iris-netflow" className="hover:text-white">iris netflow</Link></li>
-              <li><Link to="/products/iris-maps" className="hover:text-white">iris maps</Link></li>
+              <li><Link to="/products/iriscore" className="hover:text-white">iris core</Link></li>
+              <li><Link to="/products/irisnetflow" className="hover:text-white">iris netflow</Link></li>
+              <li><Link to="/products/irismaps" className="hover:text-white">iris maps</Link></li>
             </ul>
           </div>
 

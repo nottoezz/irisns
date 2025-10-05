@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "@ui/Reveal";
 import NeedAssistance from "@features/NeedAssistance";
 import { loadExternalScript } from "@hooks/loadExternalScript";
-import ColorBlooms from "@ui/ColorBlooms";
 
 // images
 import heroImg from "@assets/img/irisLinkedin.webp";
@@ -116,16 +115,6 @@ export default function News() {
 
   return (
     <main className="relative flex-1 overflow-x-hidden bg-[#0f1123]">
-      {/* soft background washes for depth */}
-      <ColorBlooms
-        items={[
-          { hue: "cyan",   size: "min(1600px, 90vw)", top: "4%", right: "3%", falloff: "84%", blurPx: 96 },
-          { hue: "violet", size: 1400, bottom: "4%", left: "6%",  falloff: "86%", blurPx: 96 },
-          { hue: "rose",   size: 1200, bottom: "-6%", left: "48%", falloff: "88%", blurPx: 110 },
-          { hue: "lime",   size: 1000, top: "36%", left: "8%",    falloff: "82%", blurPx: 80 },
-        ]}
-      />
-
       {/* hero */}
       <section className="relative overflow-hidden min-h-[520px] md:min-h-[640px]">
         {/* soft-masked hero image */}

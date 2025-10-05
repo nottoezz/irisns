@@ -1,7 +1,8 @@
 import React from "react";
+import Reveal from "@ui/Reveal";
 
 /**
- * carousel — fade between text slides (no layout shift)
+ * carousel — fade between slides (no layout shift)
  *
  * props:
  * - slides: reactnode[] (required)
@@ -12,6 +13,8 @@ import React from "react";
  * - minHeightClass?: string (tailwind class for fixed height)
  * - dotVariant?: "pill" | "dot" (default "pill")
  * - alignDots?: "start" | "center" | "end" (default "center")
+ * - revealProps?: false | { direction?: string; duration?: number; distance?: number; delay?: number }
+ * - dotsMarginClass?: string  (default "mt-3") controls spacing above the dots
  */
 export default function Carousel({
   slides,
@@ -22,14 +25,15 @@ export default function Carousel({
   minHeightClass = "min-h-[10.5rem]",
   dotVariant = "pill",
   alignDots = "center",
+  revealProps = { direction: "down", duration: 2800, distance: 20, delay: 0 },
+  dotsMarginClass = "mt-3",
 }) {
   const [i, setI] = React.useState(initialIndex);
   const [paused, setPaused] = React.useState(false);
 
   // respect reduced-motion for autoplay
   const prefersReducedMotion = React.useMemo(() => {
-    if (typeof window === "undefined" || !("matchMedia" in window))
-      return false;
+    if (typeof window === "undefined" || !("matchMedia" in window)) return false;
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, []);
   const autoMs = prefersReducedMotion ? false : auto;
@@ -48,14 +52,14 @@ export default function Carousel({
     [onChange, wrap]
   );
 
-  // autoplay (pauses on hover/focus)
+  // autoplay
   React.useEffect(() => {
     if (!autoMs || paused) return;
     const id = setInterval(() => go(i + 1), autoMs);
     return () => clearInterval(id);
   }, [autoMs, paused, i, go]);
 
-  // keyboard (left/right)
+  // keyboard
   const onKeyDown = (e) => {
     if (e.key === "ArrowRight") go(i + 1);
     if (e.key === "ArrowLeft") go(i - 1);
@@ -85,6 +89,8 @@ export default function Carousel({
       ? "justify-end"
       : "justify-center";
 
+  const multiPage = slides.length > 1;
+
   return (
     <div
       tabIndex={0}
@@ -97,60 +103,79 @@ export default function Carousel({
       onBlur={() => setPaused(false)}
       role="region"
       aria-roledescription="carousel"
-      aria-label="text carousel"
+      aria-label="carousel"
       aria-live="polite"
       className={`relative ${className}`}
     >
       {/* slide stage */}
       <div className={`relative ${minHeightClass}`}>
-        {slides.map((node, idx) => (
-          <div
-            key={idx}
-            id={`carousel-slide-${idx}`}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`slide ${idx + 1} of ${slides.length}`}
-            className={`absolute inset-0 transition-opacity duration-500 ${
-              idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          >
-            {node}
-          </div>
-        ))}
-      </div>
+        {slides.map((node, idx) => {
+          const content =
+            revealProps === false ? (
+              node
+            ) : (
+              <Reveal
+                direction={revealProps.direction ?? "down"}
+                duration={revealProps.duration ?? 2800}
+                distance={revealProps.distance ?? 20}
+                delay={revealProps.delay ?? 0}
+              >
+                {node}
+              </Reveal>
+            );
 
-      {/* dots */}
-      <div
-        className={`mt-22 w-full flex ${alignClass} items-center gap-2`}
-        role="tablist"
-        aria-label="slide selector"
-      >
-        {slides.map((_, idx) => {
-          const active = i === idx;
           return (
-            <button
+            <div
               key={idx}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              aria-controls={`carousel-slide-${idx}`}
-              onClick={() => go(idx)}
-              className={[
-                "h-1.5 rounded-full transition cursor-pointer",
-                "focus:outline-none focus:ring-2 focus:ring-white/40",
-                dotVariant === "pill"
-                  ? active
-                    ? "w-6 bg-white shadow-[0_0_0_1px_rgba(255,255,255,.15)_inset]"
-                    : "w-2 bg-white/35 hover:bg-white/60"
-                  : active
-                  ? "w-2 bg-white/85"
-                  : "w-2 bg-white/40 hover:bg-white/60",
-              ].join(" ")}
-              title={`show slide ${idx + 1}`}
-            />
+              id={`carousel-slide-${idx}`}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`slide ${idx + 1} of ${slides.length}`}
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                idx === i ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+            >
+              {content}
+            </div>
           );
         })}
       </div>
+
+      {/* dots */}
+      {multiPage && (
+        <div
+          className={`${dotsMarginClass} w-full flex ${alignClass} items-center gap-2`}
+          role="tablist"
+          aria-label="slide selector"
+        >
+          {slides.map((_, idx) => {
+            const active = i === idx;
+            const pillActive = "w-6 h-2 bg-white shadow-[0_0_0_1px_rgba(255,255,255,.18)_inset]";
+            const pillIdle   = "w-3 h-2 bg-white/35 hover:bg-white/60";
+            const dotActive  = "w-3 h-3 bg-white/90";
+            const dotIdle    = "w-3 h-3 bg-white/40 hover:bg-white/60";
+
+            return (
+              <button
+                key={idx}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                aria-controls={`carousel-slide-${idx}`}
+                onClick={() => go(idx)}
+                className={[
+                  "rounded-full transition cursor-pointer",
+                  "focus:outline-none focus:ring-1 focus:ring-white/40",
+                  dotVariant === "pill"
+                    ? active ? pillActive : pillIdle
+                    : active ? dotActive : dotIdle,
+                ].join(" ")}
+                title={`Show slide ${idx + 1}`}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
