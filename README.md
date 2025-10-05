@@ -39,7 +39,7 @@ npm run preview
 - **Nav bar** background does not change bg per page.
 - **Background** not consistent with home page.
 - **Training page** ICE links not populated.
-- **Preformance** CLS and Who We Trust section have issues.
+- **Pages** spacing and layout issues.
 
 ---
 
