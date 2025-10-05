@@ -1,24 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>Redirecting…</title>
-    <script>
-      (function (l) {
-        var base = "/irisns";
-        if (!l.pathname.startsWith(base)) {
-          l.replace(base + "/");
-          return;
-        }
-        l.replace(
-          base +
-            "/index.html?redirect=" +
-            encodeURIComponent(l.pathname.slice(base.length)) +
-            l.search +
-            l.hash
-        );
-      })(location);
-    </script>
+    <meta name="robots" content="noindex" />
   </head>
-  <body></body>
+  <body>
+    <script>
+      (function () {
+        var BASE = "/irisns/";
+        var l = window.location;
+        var path = l.pathname.startsWith(BASE)
+          ? l.pathname.slice(BASE.length - 1)
+          : l.pathname;
+        var redirect =
+          BASE +
+          "?redirect=" +
+          encodeURIComponent(path + l.search + l.hash);
+
+        l.replace(redirect);
+      })();
+    </script>
+  </body>
 </html>
