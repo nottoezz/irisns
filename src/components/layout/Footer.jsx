@@ -1,4 +1,3 @@
-// imports
 import { Link } from "react-router-dom";
 import logo from "@assets/logos/irisLogoWhite.svg";
 
@@ -13,9 +12,16 @@ export default function Footer() {
           {/* brand + site nav */}
           <div className="space-y-6">
             <Link to="/" className="inline-flex items-center" aria-label="iris home">
-              <img src={logo} alt="iris" className="h-8 w-auto" loading="lazy" />
+              <img
+                src={logo}
+                alt="iris"
+                width={124} height={28}
+                className="block h-[28px] w-[124px] object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </Link>
-            <nav aria-label="site" className="flex flex-col gap-4 text-white/80">
+            <nav aria-label="site" className="flex flex-col gap-4 text-white/80 [line-height:1.2]">
               <Link to="/products" className="hover:text-white">products</Link>
               <Link to="/about" className="hover:text-white">about us</Link>
               <Link to="/training" className="hover:text-white">training</Link>
@@ -89,4 +95,3 @@ export default function Footer() {
     </footer>
   );
 }
-

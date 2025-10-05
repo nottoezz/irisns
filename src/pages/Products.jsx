@@ -31,6 +31,8 @@ const SECTIONS = [
     ),
     ctaTo: "/products/iriscore",
     img: coreGraphic,
+    imgWidth: 1166,
+    imgHeight: 764,
     delay: 100,
   },
   {
@@ -40,6 +42,8 @@ const SECTIONS = [
     copy: "Netflow data is exported from networked devices to Iris Netflow Collectors, which are distributed around the network. This data can then be accessed seamlessly from the Centralized Iris Portal.",
     ctaTo: "/products/irisnetflow",
     img: netflowGraphic,
+    imgWidth: 1284,
+    imgHeight: 1224,
     delay: 200,
   },
   {
@@ -49,6 +53,8 @@ const SECTIONS = [
     copy: "Iris Maps is a network tool that visually displays important network information. Displayed data is continuously updated to reflect the alarm status of your network on an automatically created HTML5 canvas.",
     ctaTo: "/products/irismaps",
     img: mapsGraphic,
+    imgWidth: 2064,
+    imgHeight: 1212,
     delay: 400,
   },
 ];
@@ -261,6 +267,8 @@ export default function Products() {
                               <img
                                 src={s.img}
                                 alt={`${s.title} illustration`}
+                                width={s.imgWidth}
+                                height={s.imgHeight}
                                 className="block h-auto w-full"
                                 loading="lazy"
                               />
@@ -296,6 +304,8 @@ export default function Products() {
             <img
               src={irisYoungBusinessMan}
               alt="engineer using iris"
+              width={893}
+              height={630}
               className="absolute left-0 top-0 z-0 w-[50vw] max-w-[960px] select-none object-left-top object-contain pointer-events-none"
               loading="lazy"
             />

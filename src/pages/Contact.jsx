@@ -130,6 +130,8 @@ export default function Contact() {
           src={heroImg}
           alt=""
           aria-hidden
+          width={2560}
+          height={1191}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-85 pointer-events-none select-none lg:scale-[0.85] pl-20 pr-20 [--inner:58%] [--outer:78%] sm:[--inner:60%] sm:[--outer:80%] lg:[--inner:64%] lg:[--outer:84%]"
           style={{
             WebkitMaskImage:

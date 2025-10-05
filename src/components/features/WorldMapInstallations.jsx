@@ -62,6 +62,8 @@ export default function WorldMapInstallations({
                 src={worldMap}
                 alt=""
                 aria-hidden
+                width={1273}
+                height={626}
                 className="block w-full h-auto select-none pointer-events-none"
               />
 

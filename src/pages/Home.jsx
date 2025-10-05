@@ -73,8 +73,8 @@ export default function Home() {
               src={irisDefaultDashboard}
               alt="Iris dashboard"
               className="hero-img lg:relative lg:left-55 lg:scale-[1.5]"
-              width="1554"
-              height="1062"
+              width={1554}
+              height={1062}
               loading="eager"
             />
           </Reveal>
@@ -134,8 +134,8 @@ export default function Home() {
                   src={irisNetworkMonitoring}
                   alt="Network Monitoring & Visibility"
                   className="mx-auto w-full max-w-[700px] rounded-xl shadow-2xl lg:scale-[0.7]"
-                  width={1400}
-                  height={1000}
+                  width={896}
+                  height={980}
                   loading="eager"
                 />
               </div>

@@ -6,18 +6,12 @@ import ScrollToTop from "@app/ScrollToTop";
 export default function Layout() {
   return (
     <div className="background-generator">
-      <div className="scroller">
-        {/* router helper */}
+      <div className="scroller flex min-h-screen flex-col">
         <ScrollToTop />
-
-        {/* global-frame */}
         <Header />
-
-        {/* route content */}
         <main className="relative flex-1">
           <Outlet />
         </main>
-
         <Footer />
       </div>
     </div>

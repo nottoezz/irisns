@@ -1,18 +1,16 @@
-import { Suspense, lazy } from "react";
+// src/app/router.jsx
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./Layout";
 
-const Home = lazy(() => import("@/pages/Home"));
-const Products = lazy(() => import("@/pages/Products"));
-const IrisCore = lazy(() => import("@/pages/products/IrisCore"));
-const IrisNetFlow = lazy(() => import("@/pages/products/IrisNetflow"));
-const IrisMaps = lazy(() => import("@/pages/products/IrisMaps"));
-const About = lazy(() => import("@/pages/About"));
-const Training = lazy(() => import("@/pages/Training"));
-const Contact = lazy(() => import("@/pages/Contact"));
-const News = lazy(() => import("@/pages/News"));
-
-const loadingEl = <div className="p-8 opacity-70">Loading…</div>;
+import Home from "@/pages/Home";
+import Products from "@/pages/Products";
+import IrisCore from "@/pages/products/IrisCore";
+import IrisNetFlow from "@/pages/products/IrisNetflow";
+import IrisMaps from "@/pages/products/IrisMaps";
+import About from "@/pages/About";
+import Training from "@/pages/Training";
+import Contact from "@/pages/Contact";
+import News from "@/pages/News";
 
 export const router = createBrowserRouter(
   [
@@ -20,79 +18,16 @@ export const router = createBrowserRouter(
       element: <Layout />,
       errorElement: <div className="p-8">Something went wrong.</div>,
       children: [
-        {
-          path: "/",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <Home />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/products",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <Products />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/products/iriscore",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <IrisCore />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/products/irisnetflow",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <IrisNetFlow />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/products/irismaps",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <IrisMaps />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/about",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <About />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/training",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <Training />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/news",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <News />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/contact",
-          element: (
-            <Suspense fallback={loadingEl}>
-              <Contact />
-            </Suspense>
-          ),
-        },
-        { path: "*", element: <Navigate to={import.meta.env.BASE_URL} replace /> },
+        { path: "/", element: <Home /> },
+        { path: "/products", element: <Products /> },
+        { path: "/products/iriscore", element: <IrisCore /> },
+        { path: "/products/irisnetflow", element: <IrisNetFlow /> },
+        { path: "/products/irismaps", element: <IrisMaps /> },
+        { path: "/about", element: <About /> },
+        { path: "/training", element: <Training /> },
+        { path: "/news", element: <News /> },
+        { path: "/contact", element: <Contact /> },
+        { path: "*", element: <Navigate to="/" replace /> },
       ],
     },
   ],

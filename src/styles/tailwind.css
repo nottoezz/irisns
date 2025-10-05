@@ -25,6 +25,8 @@
     font-family: Poppins, ui-sans-serif, system-ui, -apple-system, Segoe UI,
       Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
       "Segoe UI Emoji";
+    font-size-adjust: 0.52;
+    font-synthesis: none;
   }
 
   img {

@@ -122,6 +122,8 @@ export default function News() {
           src={heroImg}
           alt=""
           aria-hidden
+          width={2560}
+          height={912}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-85 pointer-events-none select-none lg:scale-[0.9] px-5 sm:px-10 [--inner:58%] [--outer:78%] sm:[--inner:60%] sm:[--outer:80%] lg:[--inner:64%] lg:[--outer:84%]"
           style={{
             WebkitMaskImage:
