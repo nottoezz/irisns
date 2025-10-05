@@ -26,21 +26,20 @@ npm run preview
 ## 📁 Project notes
 - Built with **React**, **React Router**, and **TailwindCSS**.
 - Images/assets live under `src/assets/`.
-- Page components are under `src/pages/` and shared UI in `src/components/`.
-- Custom hooks/utilities live in `src/lib/`.
+- Page components are under `src/components/features` and shared UI in `src/components/ui`.
+- Custom hooks/utilities live in `src/lib/` and `sr/hooks`.
 
 ---
 
 ## ⚠️ Known issues (WIP)
-- **Who Trust Us** section not animated.
+- **Assets** currently not all imgs are .webp and not all logos are .svg
 - **ScrollSlide** animation not fully smooth.
-- **About** page testimonials not visible on a full page reload.
 - **Footer** links not fully populated.
 - **Mobile** compatibility/layout issues in several sections.
 - **Nav bar** background does not change bg per page.
 - **Background** not consistent with home page.
 - **Training page** ICE links not populated.
-- **All pages** maintain scroll when changing page incorrect.
+- **Preformance** CLS and Who We Trust section have issues.
 
 ---
 
