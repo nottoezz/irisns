@@ -1,4 +1,3 @@
-
 import React, { useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,16 +8,37 @@ import Carousel from "@ui/Carousel";
 import ColorBlooms from "@ui/ColorBlooms.jsx";
 import NeedAssistance from "@features/NeedAssistance";
 import ReadyToSeeSection from "@features/ReadyToSeeSection";
+import Meta from "@/components/seo/Meta";
 
 // Assets
 import mapsHero from "@assets/img/irisMapsHero.webp";
 
 const OPTIONS = [
-  { n: "01", title: "Custom Network Reporting Maps", copy: "Tailor maps to suit your network’s specific reporting needs." },
-  { n: "02", title: "Configurable Custom Alerts",  copy: "Set up custom alerts tailored to your unique environment." },
-  { n: "03", title: "User-Specific Map Saving",    copy: "Save maps on a per-user basis for personalised reference." },
-  { n: "04", title: "Zoom and Focus",              copy: "Zoom in and focus on specific areas of the network map for detailed examination." },
-  { n: "05", title: "Real-time Visual Updates",    copy: "Experience near real-time visual updates directly from the dashboard." },
+  {
+    n: "01",
+    title: "Custom Network Reporting Maps",
+    copy: "Tailor maps to suit your network’s specific reporting needs.",
+  },
+  {
+    n: "02",
+    title: "Configurable Custom Alerts",
+    copy: "Set up custom alerts tailored to your unique environment.",
+  },
+  {
+    n: "03",
+    title: "User-Specific Map Saving",
+    copy: "Save maps on a per-user basis for personalised reference.",
+  },
+  {
+    n: "04",
+    title: "Zoom and Focus",
+    copy: "Zoom in and focus on specific areas of the network map for detailed examination.",
+  },
+  {
+    n: "05",
+    title: "Real-time Visual Updates",
+    copy: "Experience near real-time visual updates directly from the dashboard.",
+  },
 ];
 
 const MAP_TYPES = [
@@ -94,13 +114,22 @@ const Card = ({ n, title, copy, bullets, foot }) => (
 );
 
 const chunk3 = (arr) =>
-  arr.reduce((acc, _, i) => (i % 3 === 0 ? acc.concat([arr.slice(i, i + 3)]) : acc), []);
+  arr.reduce(
+    (acc, _, i) => (i % 3 === 0 ? acc.concat([arr.slice(i, i + 3)]) : acc),
+    []
+  );
 
 const buildSlides = (items) =>
   chunk3(items).map((group, gi) => (
     <div key={gi} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {group.map((it, idx) => (
-        <Reveal key={idx} direction="up" duration={900} distance={14} delay={idx * 60}>
+        <Reveal
+          key={idx}
+          direction="up"
+          duration={900}
+          distance={14}
+          delay={idx * 60}
+        >
           <Card {...it} />
         </Reveal>
       ))}
@@ -117,6 +146,12 @@ export default function IrisMaps() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] text-white">
+      <Meta
+        title="Iris Maps — Real-time Network Maps & Situational Awareness"
+        description="Configurable, near real-time maps that visualize network health, alerts, and dependencies. Build from views, topology, or manually."
+        canonical="auto"
+      />
+
       {/* Blooms */}
       <ColorBlooms
         className="absolute inset-0 z-[1] hidden md:block"
@@ -162,24 +197,34 @@ export default function IrisMaps() {
         <div aria-hidden className="absolute inset-0 -z-10 bg-[#111224]" />
         <div className="relative z-10 mx-auto w-[min(1200px,92vw)] px-6 md:px-8 py-20 md:py-24 lg:py-32 text-center">
           <Reveal direction="down" duration={2000} distance={12}>
-            <p className="mb-3 text-sm uppercase tracking-[.18em] text-white/70">Product</p>
+            <p className="mb-3 text-sm uppercase tracking-[.18em] text-white/70">
+              Product
+            </p>
           </Reveal>
 
           <ScrollSlide direction="down" distance={22}>
-            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">Iris Maps</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
+              Iris Maps
+            </h1>
           </ScrollSlide>
 
           <Reveal direction="down" duration={2000} distance={18} delay={200}>
             <p className="mx-auto mt-5 max-w-[70ch] text-white/85 md:text-lg leading-relaxed">
-              Build living network diagrams that update as your environment changes. Iris Maps brings
-              topology, GPS, and event context together so teams can see issues, understand impact, and act — fast.
+              Build living network diagrams that update as your environment
+              changes. Iris Maps brings topology, GPS, and event context
+              together so teams can see issues, understand impact, and act —
+              fast.
             </p>
           </Reveal>
 
           <Reveal direction="down" duration={2000} distance={12} delay={340}>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <Link to="/contact" className="btn btn-blue">Request Demo</Link>
-              <Link to="/about" className="btn btn-pill">Learn More</Link>
+              <Link to="/contact" className="btn btn-blue">
+                Request Demo
+              </Link>
+              <Link to="/about" className="btn btn-pill">
+                Learn More
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -196,22 +241,38 @@ export default function IrisMaps() {
             </Reveal>
             <Reveal direction="down" duration={2000} distance={14} delay={90}>
               <p className="mt-5 max-w-[70ch] text-white/80 leading-relaxed">
-                Iris Maps turns raw telemetry into intuitive visuals. Generate maps from views or topology,
-                blend GPS and logical layouts, and overlay live status so engineers can troubleshoot in context.
-                Role-based permissions and per-user views keep teams focused without losing the bigger picture.
+                Iris Maps turns raw telemetry into intuitive visuals. Generate
+                maps from views or topology, blend GPS and logical layouts, and
+                overlay live status so engineers can troubleshoot in context.
+                Role-based permissions and per-user views keep teams focused
+                without losing the bigger picture.
               </p>
             </Reveal>
             <Reveal direction="down" duration={1800} distance={10} delay={160}>
               <ul className="mt-6 space-y-2 text-white/85">
-                <li>• <strong>Auto-curated layouts</strong> from Views or Topology matrices.</li>
-                <li>• <strong>Live state</strong> with event/status overlays for rapid triage.</li>
-                <li>• <strong>Flexible canvases</strong> — GPS maps or logical diagrams.</li>
-                <li>• <strong>Personalised</strong> per-user saves and presentation controls.</li>
+                <li>
+                  • <strong>Auto-curated layouts</strong> from Views or Topology
+                  matrices.
+                </li>
+                <li>
+                  • <strong>Live state</strong> with event/status overlays for
+                  rapid triage.
+                </li>
+                <li>
+                  • <strong>Flexible canvases</strong> — GPS maps or logical
+                  diagrams.
+                </li>
+                <li>
+                  • <strong>Personalised</strong> per-user saves and
+                  presentation controls.
+                </li>
               </ul>
             </Reveal>
             <Reveal direction="down" duration={1600} distance={10} delay={220}>
               <div className="mt-6">
-                <Link to="/products" className="btn btn-pill">Back to Products</Link>
+                <Link to="/products" className="btn btn-pill">
+                  Back to Products
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -254,7 +315,9 @@ export default function IrisMaps() {
         <div className="container mx-auto px-6 lg:px-8">
           <Reveal direction="down" duration={1600} distance={12}>
             <div className="mb-8 w-fit rounded-2xl bg-white/[.04] px-5 py-4 ring-1 ring-white/10 shadow-lg">
-              <h2 className="mt-1 text-3xl font-extrabold tracking-tight md:text-4xl">Options & benefits</h2>
+              <h2 className="mt-1 text-3xl font-extrabold tracking-tight md:text-4xl">
+                Options & benefits
+              </h2>
             </div>
           </Reveal>
           <Carousel
@@ -264,18 +327,30 @@ export default function IrisMaps() {
             dotVariant="dot"
             alignDots="center"
             className="mt-2"
-            revealProps={{ direction: "up", duration: 900, distance: 14, delay: 0 }}
+            revealProps={{
+              direction: "up",
+              duration: 900,
+              distance: 14,
+              delay: 0,
+            }}
           />
         </div>
       </section>
 
       {/* MAP TYPES */}
-      <section id="key-features-section" className="relative overflow-hidden pt-10 pb-16 md:pt-12 md:pb-20">
+      <section
+        id="key-features-section"
+        className="relative overflow-hidden pt-10 pb-16 md:pt-12 md:pb-20"
+      >
         <div className="container mx-auto px-6 lg:px-8">
           <Reveal direction="down" duration={1600} distance={12}>
             <div className="mb-8 w-fit rounded-2xl bg-white/[.04] px-5 py-4 ring-1 ring-white/10 shadow-lg">
-              <p className="text-sm uppercase tracking-[.18em] text-blue-300">IRIS</p>
-              <h2 className="mt-1 text-3xl font-extrabold tracking-tight md:text-4xl">Map types</h2>
+              <p className="text-sm uppercase tracking-[.18em] text-blue-300">
+                IRIS
+              </p>
+              <h2 className="mt-1 text-3xl font-extrabold tracking-tight md:text-4xl">
+                Map types
+              </h2>
             </div>
           </Reveal>
           <Carousel
@@ -284,7 +359,12 @@ export default function IrisMaps() {
             minHeightClass="min-h-[36rem] md:min-h-[34rem] lg:min-h-[32rem]"
             dotVariant="dot"
             alignDots="center"
-            revealProps={{ direction: "up", duration: 900, distance: 14, delay: 0 }}
+            revealProps={{
+              direction: "up",
+              duration: 900,
+              distance: 14,
+              delay: 0,
+            }}
           />
         </div>
       </section>

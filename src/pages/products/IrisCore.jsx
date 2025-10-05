@@ -8,6 +8,7 @@ import NeedAssistance from "@features/NeedAssistance";
 import ReadyToSeeSection from "@features/ReadyToSeeSection";
 import ColorBlooms from "@ui/ColorBlooms.jsx";
 import Carousel from "@ui/Carousel";
+import Meta from "@/components/seo/Meta";
 
 // imgs
 import coreHero from "@assets/img/irisCore.webp";
@@ -181,6 +182,11 @@ export default function IrisCore() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] text-white">
+      <Meta
+        title="Iris Core — Foundation of the Iris Platform"
+        description="Central storage, graphing, configuration, thresholds, notifications, and reporting for multi-vendor performance management."
+        canonical="auto"
+      />
       {/* Rich, premium blooms (left/right only; no middle clutter) */}
       <ColorBlooms
         className="absolute inset-0 z-[1] hidden md:block"

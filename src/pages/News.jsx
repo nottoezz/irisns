@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Reveal from "@ui/Reveal";
 import NeedAssistance from "@features/NeedAssistance";
 import { loadExternalScript } from "@hooks/loadExternalScript";
+import Meta from "@/components/seo/Meta";
 
 // images
 import heroImg from "@assets/img/irisLinkedin.webp";
@@ -115,6 +116,12 @@ export default function News() {
 
   return (
     <main className="relative flex-1 overflow-x-hidden bg-[#0f1123]">
+      <Meta
+        title="News — Iris Network Systems"
+        description="Product updates, releases, and announcements from the Iris team."
+        canonical="auto"
+      />
+      
       {/* hero */}
       <section className="relative overflow-hidden min-h-[520px] md:min-h-[640px]">
         {/* soft-masked hero image */}

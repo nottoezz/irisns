@@ -7,6 +7,7 @@ import ScrollSlide from "@ui/ScrollSlide.jsx";
 import StatCircle from "@ui/stat-circle/index.js";
 import Carousel from "@ui/Carousel.jsx";
 import ColorBlooms from "@ui/ColorBlooms";
+import Meta from "@/components/seo/Meta";
 
 // imgs
 import plusIcon from "@assets/utility/plusIcon.svg";
@@ -62,6 +63,12 @@ export default function About() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] pt-20">
+      <Meta
+        title="About — Iris Network Systems"
+        description="We build modular, high-scale performance monitoring and analytics trusted by service providers and enterprises."
+        canonical="auto"
+      />
+      
       <div className="relative z-10">
       <ColorBlooms
         items={[

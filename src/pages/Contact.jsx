@@ -6,6 +6,7 @@ import Reveal from "@ui/Reveal";
 import NeedAssistance from "@features/NeedAssistance";
 import ContactMap from "@features/ContactMap";
 import { loadExternalScript } from "@hooks/loadExternalScript";
+import Meta from "@/components/seo/Meta";
 
 // imgs
 import heroImg from "@assets/img/irisContactHero.webp";
@@ -113,6 +114,12 @@ export default function Contact() {
 
   return (
     <main className="relative flex-1 overflow-x-hidden bg-[#0f1123] text-white">
+      <Meta
+        title="Contact — Iris Network Systems"
+        description="Request a demo or talk to our team about monitoring, NetFlow analytics, and real-time maps."
+        canonical="auto"
+      />
+      
       {/* give some depth, soft wash */}
       <div
         aria-hidden

@@ -8,6 +8,7 @@ import NeedAssistance from "@features/NeedAssistance";
 import ReadyToSeeSection from "@features/ReadyToSeeSection";
 import ColorBlooms from "@ui/ColorBlooms.jsx";
 import Carousel from "@ui/Carousel";
+import Meta from "@/components/seo/Meta";
 
 // Assets
 import netflowHero from "@assets/img/irisNetflow.webp";
@@ -131,6 +132,13 @@ export default function IrisNetflow() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#111224] text-white">
+      <Meta
+        title="Iris NetFlow — High-scale Flow Analytics & Reporting"
+        description="Collect NetFlow/sFlow/IPFIX at scale, surface top talkers, analyze by app/ASN/host, and schedule reports for capacity planning and incident triage."
+        canonical="auto"
+        ogImage="/irisns/og/iris-netflow.jpg"
+      />
+
       <ColorBlooms
         className="absolute inset-0 z-[1] hidden md:block"
         items={[

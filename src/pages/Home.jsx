@@ -7,6 +7,7 @@ import Reveal from "@ui/Reveal";
 import NeedAssistance from "@features/NeedAssistance";
 import WhoTrustUs from "@features/WhoTrustsUs";
 import DecorativeDots from "@ui/DecorativeDots";
+import Meta from "@/components/seo/Meta";
 
 // imgs
 import irisDefaultDashboard from "@assets/img/irisDefaultDashboard.webp";
@@ -37,6 +38,12 @@ export default function Home() {
 
   return (
     <main className="flex-1 overflow-y-auto overflow-x-hidden">
+      <Meta
+        title="Iris Network Systems — Performance Monitoring, NetFlow & Maps"
+        description="Unified performance monitoring for CSPs and enterprises: Iris Core, NetFlow analytics, and real-time Maps. Visualize health, detect anomalies, and act faster."
+        canonical="auto"
+      />
+      
       {/* hero */}
       <section className="hero">
         <div className="container-narrow hero-grid">
@@ -85,7 +92,7 @@ export default function Home() {
       <section className="section">
         <div className="container-narrow text-center">
           {/* Decorative Dots */}
-          <DecorativeDots/>
+          <DecorativeDots />
 
           <Reveal direction="down" duration={1400} distance={20} delay={100}>
             <div className="eyebrow mb-3">COMPREHENSIVE</div>

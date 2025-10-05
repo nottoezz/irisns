@@ -6,6 +6,7 @@ import Reveal from "@ui/Reveal";
 import ColorBlooms from "@ui/ColorBlooms"
 import TrainingLevels from "@features/TrainingLevels";
 import NeedAssistance from "@features/NeedAssistance";
+import Meta from "@/components/seo/Meta";
 
 // imgs
 import heroImg from "@assets/img/irisTrainingHero.webp";
@@ -18,6 +19,12 @@ export default function Training() {
 
   return (
     <main className="relative flex-1 overflow-x-hidden bg-[#0f1123]">
+      <Meta
+        title="Training — Iris Network Systems"
+        description="Guides and courses for administrators, service managers, and end customers to get the most out of Iris."
+        canonical="auto"
+      />
+      
       <ColorBlooms className="overflow-x-hidden"
         items={[
           { hue: "blue", size: 2200, top: "40%",  right: "40%", falloff: "84%", blurPx: 110 },

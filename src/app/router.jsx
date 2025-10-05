@@ -1,4 +1,3 @@
-// src/app/router.jsx
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./Layout";
 

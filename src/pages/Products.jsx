@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Reveal from "@ui/Reveal";
 import ScrollSlide from "@ui/ScrollSlide";
 import NeedAssistance from "@features/NeedAssistance";
+import Meta from "@/components/seo/Meta";
 
 // images
 import heroGlobe from "@assets/img/irispProductsHero.webp";
@@ -80,6 +81,12 @@ export default function Products() {
 
   return (
     <main className="min-h-screen">
+      <Meta
+        title="Products — Iris Network Systems"
+        description="Explore Iris Core, NetFlow, and Maps. Modular capabilities for data collection, visualization, thresholds, alerts, reporting, and more."
+        canonical="auto"
+      />
+
       {/* hero */}
       <section
         className="relative overflow-hidden"
