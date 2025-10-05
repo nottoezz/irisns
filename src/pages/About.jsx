@@ -190,7 +190,7 @@ export default function About() {
               <Carousel
                 slides={slides}
                 auto={8000}
-                minHeightClass="min-h-[11rem]"
+                minHeightClass="min-h-[16rem]"
               />
             </Reveal>
           </div>

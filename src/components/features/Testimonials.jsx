@@ -232,7 +232,7 @@ export default function Testimonials({
                     setIdx(i + 2); // real left card index inside [2..n+1]
                     restartTimer();
                   }}
-                  className={`h-2 w-2 rounded-full transition-opacity ${
+                  className={`h-3 w-3 rounded-full transition-opacity ${
                     i === activeDot
                       ? "bg-blue-400 opacity-100"
                       : "bg-white opacity-70"
