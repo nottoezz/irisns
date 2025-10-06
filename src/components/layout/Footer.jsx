@@ -3,6 +3,8 @@ import logo from "@assets/logos/irisWhite.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const eulaHref = `${import.meta.env.BASE_URL}docs/IRIS-EULA.pdf`;
+  const paiaManualHref = `${import.meta.env.BASE_URL}docs/Iris-PAIA-Manual-2025.pdf`;
   const { pathname } = useLocation();
 
   const is = (path) => pathname === path;
@@ -78,11 +80,11 @@ export default function Footer() {
             <ul className="space-y-3 text-white/80">
               <li><Link to="/about" className={activeLink(is("/about"))}>about us</Link></li>
               <li><Link to="/contact" className={activeLink(is("/contact"))}>contact</Link></li>
-              <li><a href="/docs/Iris-PAIA-Manual-2025.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white">paia manual</a></li>
+              <li><a href={paiaManualHref} target="_blank" rel="noopener noreferrer" className="hover:text-white">paia manual</a></li>
               <li><a href="https://inforegulator.org.za/wp-content/uploads/2020/07/InfoRegSA-PAIA-Form02-Reg7.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white">paia form 2 - request</a></li>
               <li><a href="https://inforegulator.org.za/wp-content/uploads/2020/07/Form-3-PAIA.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white">paia form 3 - outcome</a></li>
               <li><Link to="/privacypolicy" target="_blank" rel="noopener noreferrer" className={activeLink(is("/privacypolicy"))}>privacy policy</Link></li>
-              <li><a href="/docs/IRIS-EULA.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white">eula</a></li>
+              <li><a href={eulaHref} target="_blank" rel="noopener noreferrer" className="hover:text-white">eula</a></li>
             </ul>
           </div>
         </div>
