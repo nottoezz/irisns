@@ -3,15 +3,15 @@ import Reveal from "@ui/Reveal";
 import DecorativeDots from "@ui/DecorativeDots";
 
 // built-in logos (adjust paths if your layout differs)
-import logoLinkAfrica from "@assets/logos/link-africa.png";
-import logoThree6Five from "@assets/logos/three6five.png";
-import logoAllied from "@assets/logos/allied.png";
-import logoComsol from "@assets/logos/comsol.png";
-import logoTenet from "@assets/logos/tenet.png";
-import logoMTN from "@assets/logos/mtnLogo.png";
-import logoITEC from "@assets/logos/itecWhiteLogo.svg";
-import logoVodacom from "@assets/logos/vodacomWhiteLogo.svg";
-import logoVoc from "@assets/logos/voxTelecomLogo.svg";
+import logoLinkAfrica from "@assets/logos/link-africa.svg";
+import logoThree6Five from "@assets/logos/three6five.svg";
+import logoAllied from "@assets/logos/allied.svg";
+import logoComsol from "@assets/logos/comsol.svg";
+import logoTenet from "@assets/logos/tenet.svg";
+import logoMTN from "@assets/logos/mtn.svg";
+import logoITEC from "@assets/logos/itec.svg";
+import logoVodacom from "@assets/logos/vodacom.svg";
+import logoVoc from "@assets/logos/vox.svg";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 

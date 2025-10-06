@@ -2,10 +2,10 @@
 import React from "react";
 
 // logos
-import mtnLogo from "@assets/logos/mtnLogo.png";
-import voxLogo from "@assets/logos/voxTelecomLogo.svg";
-import itecLogo from "@assets/logos/itecWhiteLogo.svg";
-import vodacomLogo from "@assets/logos/vodacomWhiteLogo.svg";
+import mtnLogo from "@assets/logos/mtn.svg";
+import voxLogo from "@assets/logos/vox.svg";
+import itecLogo from "@assets/logos/itec.svg";
+import vodacomLogo from "@assets/logos/vodacom.svg";
 import placeHolder from "@assets/logos/placeHolder.svg";
 
 /* tiny star */
