@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "@ui/Reveal";
+import DecorativeDots from "@ui/DecorativeDots";
 
 // chevron icon used in accordions
 function Chevron({ open }) {
@@ -75,15 +76,7 @@ export default function TrainingLevels() {
       <div className="container-narrow relative z-10 text-center">
         <div className="mx-auto mb-5 flex flex-col items-center gap-2">
           {/* tiny decorative dots */}
-          <Reveal direction="down" duration={1400} distance={20} delay={100}>
-            <div className="mt-5 mx-auto mb-2 h-1 w-1 rounded-full bg-blue-600/30" />
-          </Reveal>
-          <Reveal direction="down" duration={1800} distance={20} delay={200}>
-            <div className="-mt-2 mx-auto mb-2 h-1 w-1 rounded-full bg-blue-600/60" />
-          </Reveal>
-          <Reveal direction="down" duration={2200} distance={20} delay={300}>
-            <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600/60" />
-          </Reveal>
+          <DecorativeDots />
         </div>
         <Reveal direction="down" duration={2000} distance={40}>
           <div className="text-white/60 tracking-[.28em] text-xs">WE OFFER</div>
@@ -169,18 +162,18 @@ export default function TrainingLevels() {
               {/* module 1 */}
               <Section title="Module 1 – Graphs searching and the troubleshooter">
                 <div className="grid gap-3 pt-5">
-                  <GhostLink>Collecting Data in Iris</GhostLink>
-                  <GhostLink>Searching in Iris</GhostLink>
-                  <GhostLink>Graph Browser</GhostLink>
-                  <GhostLink>Troubleshooter</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120175">Collecting Data in Iris</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120177">Searching in Iris</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120178">Graph Browser</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120179">Troubleshooter</GhostLink>
                 </div>
               </Section>
 
               {/* module 2 */}
               <Section title="Module 2 – Events & Alarms">
                 <div className="grid gap-3 pt-5">
-                  <GhostLink>Alarms and Severity</GhostLink>
-                  <GhostLink>Alarms vs. Events</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120252/">Alarms and Severity</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120253">Alarms vs. Events</GhostLink>
                 </div>
               </Section>
 
@@ -189,42 +182,42 @@ export default function TrainingLevels() {
                 <div className="grid gap-3 pt-5">
                   {/* dashed box for grouped items */}
                   <div className="rounded-lg border-2 border-dashed border-white/20 p-3 grid gap-3">
-                    <GhostLink>Active Monitoring</GhostLink>
-                    <GhostLink>Syslogs and SNMP traps</GhostLink>
-                    <GhostLink>Thresholds</GhostLink>
+                    <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120258">Active Monitoring</GhostLink>
+                    <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120259">Syslogs and SNMP traps</GhostLink>
+                    <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120262">Thresholds</GhostLink>
                   </div>
 
-                  <GhostLink>How does Iris determine status is DOWN</GhostLink>
-                  <GhostLink>Alarm Manager</GhostLink>
-                  <GhostLink>Searching Event Logs</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120257">How does Iris determine status is DOWN</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120263">Alarm Manager</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120943">Searching Event Logs</GhostLink>
                 </div>
               </Section>
 
               {/* module 3 */}
               <Section title="Module 3 – Dashboards">
                 <div className="grid gap-3 pt-5">
-                  <GhostLink>Default Dashboard</GhostLink>
-                  <GhostLink>User Dashboards</GhostLink>
-                  <GhostLink>Maps Visualisation</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120948">Default Dashboard</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120541">User Dashboards</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120947">Maps Visualisation</GhostLink>
                 </div>
               </Section>
 
               {/* module 4 */}
               <Section title="Module 4 – Reports">
                 <div className="grid gap-3 pt-5">
-                  <GhostLink>Device Health</GhostLink>
-                  <GhostLink>Device Info</GhostLink>
-                  <GhostLink>Top N</GhostLink>
-                  <GhostLink>Netflow Reports</GhostLink>
-                  <GhostLink>Iris Reports</GhostLink>
-                  <GhostLink>Event Report</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120945">Device Health</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120946">Device Info</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120949">Top N</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120984">Netflow Reports</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120542">Iris Reports</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120951">Event Report</GhostLink>
                 </div>
               </Section>
 
               {/* apps */}
               <Section title="Iris Apps">
                 <div className="grid gap-3 pt-5">
-                  <GhostLink>Iris Maps</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000121009/">Iris Maps</GhostLink>
                 </div>
               </Section>
             </div>
@@ -254,50 +247,46 @@ export default function TrainingLevels() {
                   DEVICES
                 </div>
                 <div className="space-y-3">
-                  <GhostLink href="#">Manage Devices</GhostLink>
-                  <GhostLink href="#">Monitoring Profiles</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120982">Manage Devices</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120985">Monitoring Profiles</GhostLink>
                 </div>
               </Section>
 
               {/* views */}
               <Section title="Views" defaultOpen={false}>
                 <div className="space-y-3 pt-5">
-                  <GhostLink href="#">Manage Views</GhostLink>
-                  <GhostLink href="#">Edit Mnemonics</GhostLink>
-                  <GhostLink href="#">Edit Stacks</GhostLink>
-                  <GhostLink href="#">List Elements</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120986">Manage Views</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120987">Edit Mnemonics</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120988">Edit Stacks</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120989">List Elements</GhostLink>
                 </div>
               </Section>
 
               {/* monitoring */}
               <Section title="Monitoring" defaultOpen={false}>
                 <div className="space-y-3 pt-5">
-                  <GhostLink href="#">Set Thresholds</GhostLink>
-                  <GhostLink href="#">
-                    Syslogs Rules and SNMP Trap Rules
-                  </GhostLink>
-                  <GhostLink href="#">Notification Groups</GhostLink>
-                  <GhostLink href="#">Notification Rules</GhostLink>
-                  <GhostLink href="#">Notification Templates</GhostLink>
-                  <GhostLink href="#">Set Topologies</GhostLink>
-                  <GhostLink href="#">
-                    Maintenance and Data Exclusions
-                  </GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120990">Set Thresholds</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120259">Syslogs Rules and SNMP Trap Rules</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120991">Notification Groups</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120992">Notification Rules</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120998">Notification Templates</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120999">Set Topologies</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000121000">Maintenance and Data Exclusions</GhostLink>
                 </div>
               </Section>
 
               {/* systems */}
               <Section title="Systems" defaultOpen={false}>
                 <div className="space-y-3 pt-5">
-                  <GhostLink href="#">Manage Users</GhostLink>
-                  <GhostLink href="#">Manage Roles</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120994">Manage Users</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000120993">Manage Roles</GhostLink>
                 </div>
               </Section>
 
               {/* tools */}
               <Section title="Tools" defaultOpen={false}>
                 <div className="space-y-3 pt-5">
-                  <GhostLink href="#">Ping and Traceroute</GhostLink>
+                  <GhostLink href="https://support.irisns.com/support/solutions/articles/11000121008">Ping and Traceroute</GhostLink>
                 </div>
               </Section>
             </div>
@@ -315,9 +304,7 @@ export default function TrainingLevels() {
         >
           Support
         </a>
-        <Link to="/contact" className="btn btn-pill">
-          Request Demo
-        </Link>
+        <Link to="/contact" className="btn btn-pill">Request Demo</Link>
       </div>
     </section>
   );
