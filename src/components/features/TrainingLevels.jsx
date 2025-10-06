@@ -68,10 +68,7 @@ export default function TrainingLevels() {
     "rounded-2xl p-6 md:p-7 transition-colors hover:bg-white/[.035]";
 
   return (
-    <section className="relative bg-[#0f1123] py-16 md:py-20">
-      {/* background layer placeholder (kept empty intentionally) */}
-      <div aria-hidden className="pointer-events-none absolute inset-0" />
-
+    <section className="relative bg-[#0f1123] py-16 md:py-20 overflow-hidden">
       {/* heading */}
       <div className="container-narrow relative z-10 text-center">
         <div className="mx-auto mb-5 flex flex-col items-center gap-2">
@@ -224,7 +221,7 @@ export default function TrainingLevels() {
           </article>
         </Reveal>
 
-        {/* level 3 (same style/behavior with full contents) */}
+        {/* level 3 */}
         <Reveal direction="right" distance={20} duration={2000} delay={140}>
           <article className={cardBase}>
             <div className="text-blue-400 text-sm tracking-widest">03</div>
