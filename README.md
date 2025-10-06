@@ -32,13 +32,9 @@ npm run preview
 ---
 
 ## ⚠️ Known issues (WIP)
-- **Assets** currently not all imgs are .webp and not all logos are .svg
 - **ScrollSlide** animation not fully smooth.
-- **Footer** links not fully populated.
 - **Mobile** compatibility/layout issues in several sections.
 - **Nav bar** background does not change bg per page.
-- **Background** not consistent with home page.
-- **Training page** ICE links not populated.
 - **Pages** spacing and layout issues.
 
 ---
