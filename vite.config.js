@@ -29,4 +29,25 @@ export default defineConfig(({ mode }) => ({
       "@assets": resolve(__dirname, "src/assets"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) {
+            return undefined;
+          }
+
+          if (id.includes("react-leaflet") || id.includes("leaflet")) {
+            return "leaflet";
+          }
+
+          if (id.includes("react")) {
+            return "react";
+          }
+
+          return "vendor";
+        },
+      },
+    },
+  },
 }));
