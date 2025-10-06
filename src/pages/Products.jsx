@@ -13,7 +13,7 @@ import heroGlobe from "@assets/img/irispProductsHero.webp";
 import coreGraphic from "@assets/img/irisCoreGraphic.webp";
 import netflowGraphic from "@assets/img/IrisNetflowGraphic.webp";
 import mapsGraphic from "@assets/img/IrisiMapsGraphic.webp";
-import irisYoungBusinessMan from "@assets/img/irisYoungBusinessMan.jpg";
+import irisYoungBusinessMan from "@assets/img/irisYoungBusinessMan.webp";
 
 // section cards
 const SECTIONS = [
