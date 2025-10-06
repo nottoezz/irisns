@@ -10,6 +10,7 @@ import About from "@/pages/About";
 import Training from "@/pages/Training";
 import Contact from "@/pages/Contact";
 import News from "@/pages/News";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 export const router = createBrowserRouter(
   [
@@ -26,6 +27,7 @@ export const router = createBrowserRouter(
         { path: "/training", element: <Training /> },
         { path: "/news", element: <News /> },
         { path: "/contact", element: <Contact /> },
+        { path: "/privacypolicy", element: <PrivacyPolicy /> },
         { path: "*", element: <Navigate to="/" replace /> },
       ],
     },
