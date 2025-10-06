@@ -7,6 +7,7 @@ import NeedAssistance from "@features/NeedAssistance";
 import ContactMap from "@features/ContactMap";
 import { loadExternalScript } from "@hooks/loadExternalScript";
 import Meta from "@/components/seo/Meta";
+import ColorBlooms from "@ui/ColorBlooms";
 
 // imgs
 import heroImg from "@assets/img/irisContactHero.webp";
@@ -120,14 +121,13 @@ export default function Contact() {
         canonical="auto"
       />
       
-      {/* give some depth, soft wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(1100px 700px at 8% 10%, rgba(59,130,246,.08), transparent 60%), radial-gradient(900px 700px at 92% 88%, rgba(14,165,233,.08), transparent 60%)",
-        }}
+      <ColorBlooms
+        items={[
+          { hue: "blue", size: 2200, top: "20%",  right: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "sky", size: 2800, top: "2%",  left: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "violet", size: 1700, bottom: "7%", left: "65%", falloff: "84%", blurPx: 110 },
+          { hue: "rose", size: 1500, bottom: "-10%", right: "65%", falloff: "84%", blurPx: 110 },
+        ]}
       />
 
       {/* header and hero */}
