@@ -131,7 +131,7 @@ export default function Contact() {
       />
 
       {/* header and hero */}
-      <section className="relative overflow-hidden py-20 md:py-28">
+      <section className="relative overflow-hidden min-h-[520px] md:min-h-[640px]">
         {/* hero img */}
         <img
           src={heroImg}
@@ -151,7 +151,7 @@ export default function Contact() {
             maskSize: "100% 100%",
           }}
         />
-        <div className="relative container max-w-6xl mx-auto px-6 lg:px-8 text-center">
+        <div className="relative z-10 container-narrow text-center py-20 md:py-28">
           <Reveal direction="down" distance={18} duration={2000}>
             <div className="eyebrow mb-3 text-white/70">
               IRIS NETWORK SYSTEMS
