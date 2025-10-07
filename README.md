@@ -38,6 +38,7 @@ npm run preview
 - **Pages** spacing and layout issues.
 - **Mail Endpoint** contact page submit fix.
 - **Comments** Make comments consistend and verbose throughout website for future developers quick and easy understanding.
+- **Privacy Policy** centain infomation is outdated.
 
 ---
 
