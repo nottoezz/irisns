@@ -40,6 +40,7 @@ npm run preview
 - **Comments** Make comments consistend and verbose throughout website for future developers quick and easy understanding.
 - **Privacy Policy** centain infomation is outdated.
 - **Chore** replace tailwind css background generator with color blooms for consistancy.
+- **Prodyct Page** ICE menu animations need to not affect scroll on page.
 
 ---
 
