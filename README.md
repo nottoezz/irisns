@@ -36,6 +36,10 @@ npm run preview
 - **Mobile** compatibility/layout issues in several sections.
 - **Nav bar** background does not change bg per page.
 - **Pages** spacing and layout issues.
+- **Mail Endpoint** contact page submit fix.
+- **Comments** Make comments consistend and verbose throughout website for future developers quick and easy understanding.
+- **Privacy Policy** centain infomation is outdated.
+- **Chore** replace tailwind css background generator with color blooms for consistancy.
 
 ---
 
