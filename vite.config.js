@@ -37,15 +37,12 @@ export default defineConfig(({ mode }) => ({
             return undefined;
           }
 
+          // give leaflet own chunk (fix build issue)
           if (id.includes("react-leaflet") || id.includes("leaflet")) {
             return "leaflet";
           }
 
-          if (id.includes("react")) {
-            return "react";
-          }
-
-          return "vendor";
+          return undefined;
         },
       },
     },
