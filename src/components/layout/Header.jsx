@@ -63,11 +63,10 @@ export default function Header() {
   return (
     <header
       className={[
-        "site-header sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300",
+        "site-header fixed inset-x-0 top-0 transition-[background-color,box-shadow,border-color] duration-300",
         hasBg ? "border-b border-white/10 shadow-[0_6px_20px_rgba(0,0,0,.25)]" : "border-b border-transparent",
       ].join(" ")}
       style={{
-        backgroundColor: hasBg ? "rgba(11,13,18,0.85)" : "transparent",
         backdropFilter: hasBg ? "saturate(180%) blur(10px)" : "none",
         WebkitBackdropFilter: hasBg ? "saturate(180%) blur(10px)" : "none",
       }}
@@ -78,8 +77,8 @@ export default function Header() {
           <img
             src={logo}
             alt="Iris"
-            width={124}            // ← put your real asset width
-            height={28}            // ← and height here
+            width={124}
+            height={28}
             className="block h-[28px] w-[124px] object-contain"
             decoding="async"
             loading="eager"
