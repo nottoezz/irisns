@@ -76,7 +76,6 @@ export default function NeedAssistance({
 
   return (
     <section id={id} className={["section", className].join(" ").trim()}>
-      <div className="py-15 md:py-15">
         <Animate>
           <div className="container-narrow text-center">
             <DecorativeDots />
@@ -128,7 +127,6 @@ export default function NeedAssistance({
             </div>
           </div>
         </Animate>
-      </div>
     </section>
   );
 }
