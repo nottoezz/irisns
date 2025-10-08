@@ -2,15 +2,8 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "@assets/logos/irisWhite.svg";
-
-const NAV = [
-  { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
-  { label: "About", to: "/about" },
-  { label: "Training", to: "/training" },
-  { label: "News", to: "/news" },
-  { label: "Contact", to: "/contact" },
-];
+import MobileMenu from "@ui/MobileMenu.jsx";
+import NAV from "@data/nav";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -52,11 +45,6 @@ export default function Header() {
 
   // close on route change + esc
   useEffect(() => setOpen(false), [pathname]);
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
 
   const hasBg = open || scrolled;
 
@@ -77,16 +65,16 @@ export default function Header() {
           <img
             src={logo}
             alt="Iris"
-            width={124}
+            width={60}
             height={28}
-            className="block h-[28px] w-[124px] object-contain"
+            className="block h-[28px] w-[60px]"
             decoding="async"
             loading="eager"
             draggable="false"
           />
         </Link>
 
-        {/* desktop nav (stable line-height & spacing) */}
+        {/* desktop nav */}
         <nav className="nav hidden md:flex items-center gap-5 [line-height:1] whitespace-nowrap">
           {NAV.map((item) => (
             <NavLink
@@ -102,7 +90,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* desktop ctas (reserve space so nothing shifts) */}
+        {/* desktop ctas */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href="https://support.irisns.com/support/home"
@@ -112,69 +100,13 @@ export default function Header() {
           >
             Support
           </a>
-          <NavLink to="/contact" className="btn btn-pill">
+          <NavLink to="/contact" className="btn btn-pill ">
             Request Demo
           </NavLink>
         </div>
 
-        {/* mobile toggle (fixed box to avoid layout jump) */}
-        <button
-          type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/20"
-          aria-expanded={open}
-          aria-controls="mobileNav"
-          aria-label="toggle navigation"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {/* simple hamburger so text width doesn’t vary */}
-          <span className="relative block h-4 w-5">
-            <span className="absolute inset-x-0 top-0 h-0.5 bg-white"></span>
-            <span className="absolute inset-x-0 top-1/2 -mt-[1px] h-0.5 bg-white"></span>
-            <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white"></span>
-          </span>
-        </button>
-      </div>
-
-      {/* mobile panel (max-height reserved; opacity only) */}
-      <div
-        id="mobileNav"
-        className={[
-          "md:hidden overflow-hidden transition-[max-height,opacity] duration-300 will-change-[max-height,opacity]",
-          open ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0",
-        ].join(" ")}
-      >
-        <div className="container-narrow pb-4">
-          <ul className="mt-2 rounded-xl border border-white/10 bg-[var(--panel)] p-2">
-            {NAV.map((item) => (
-              <li key={item.label}>
-                <NavLink
-                  to={item.to}
-                  className="block rounded-lg px-3 py-2 text-white/90 hover:bg-white/10"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-            <li className="mt-2 grid grid-cols-2 gap-2">
-              <a
-                className="btn btn-blue w-full justify-center"
-                href="https://support.irisns.com/support/home"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Support
-              </a>
-              <NavLink
-                to="/contact"
-                className="btn btn-pill w-full justify-center"
-                onClick={() => setOpen(false)}
-              >
-                Request Demo
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+        {/* mobile nav */}
+        <MobileMenu open={open} setOpen={setOpen} items={NAV} />
       </div>
     </header>
   );
