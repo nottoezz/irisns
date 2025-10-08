@@ -46,6 +46,17 @@ export default function ColorBlooms({ items = [], className = "" }) {
       {items.map((b, i) => {
         const hueVar = cssVarForHue(b.hue);
         const stopColor = b.color ?? hueVar ?? "rgba(56,189,248,.18)";
+        const blurValue =
+          typeof b.blurPx === "number"
+            ? `blur(${b.blurPx}px)`
+            : typeof b.blurPx === "string"
+            ? b.blurPx
+            : null;
+        const falloffInput = b.falloff;
+        const falloff =
+          typeof falloffInput === "number"
+            ? `${falloffInput <= 1 ? falloffInput * 100 : falloffInput}%`
+            : falloffInput ?? "70%";
         return (
           <div
             key={i}
@@ -58,9 +69,10 @@ export default function ColorBlooms({ items = [], className = "" }) {
               right: b.right,
               bottom: b.bottom,
               transform: b.transform,
-              background: `radial-gradient(closest-side, ${stopColor} 0%, transparent 70%)`,
+              background: `radial-gradient(circle, ${stopColor} 0%, transparent ${falloff})`,
               mixBlendMode: b.blend ?? "soft-light",
               opacity: b.opacity ?? 0.7,
+              filter: blurValue ?? undefined,
             }}
           />
         );

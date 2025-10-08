@@ -8,6 +8,7 @@ import NeedAssistance from "@features/NeedAssistance";
 import WhoTrustUs from "@features/WhoTrustsUs";
 import DecorativeDots from "@ui/DecorativeDots";
 import Meta from "@/components/seo/Meta";
+import ColorBlooms from "@ui/ColorBlooms";
 
 // imgs
 import irisDefaultDashboard from "@assets/img/irisDefaultDashboard.webp";
@@ -37,13 +38,95 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex-1 overflow-y-auto overflow-x-hidden">
+    <main className="relative flex-1 overflow-x-hidden bg-[#0f1123]">
       <Meta
         title="Iris Network Systems — Performance Monitoring, NetFlow & Maps"
         description="Unified performance monitoring for CSPs and enterprises: Iris Core, NetFlow analytics, and real-time Maps. Visualize health, detect anomalies, and act faster."
         canonical="auto"
       />
-      
+      <ColorBlooms
+        items={[
+          {
+            hue: "blue",
+            color: "rgba(59,130,246,0.55)",
+            size: "min(2200px, 160vw)",
+            top: "-25%",
+            left: "-40%",
+            blend: "screen",
+            opacity: 0.52,
+            falloff: "66%",
+            blurPx: 160,
+          },
+          {
+            hue: "purple",
+            color: "rgba(168,85,247,0.48)",
+            size: "min(1900px, 130vw)",
+            top: "-10%",
+            right: "-25%",
+            blend: "screen",
+            opacity: 0.5,
+            falloff: "64%",
+            blurPx: 150,
+          },
+          {
+            hue: "sky",
+            color: "rgba(56,189,248,0.42)",
+            size: "min(1600px, 120vw)",
+            top: "20%",
+            left: "30%",
+            blend: "screen",
+            opacity: 0.45,
+            falloff: "60%",
+            blurPx: 140,
+          },
+          {
+            hue: "amber",
+            color: "rgba(251,191,36,0.32)",
+            size: "min(1600px, 120vw)",
+            top: "20%",
+            left: "-30%",
+            blend: "screen",
+            opacity: 0.45,
+            falloff: "60%",
+            blurPx: 140,
+          },
+          {
+            hue: "teal",
+            color: "rgba(45,212,191,0.38)",
+            size: "min(1400px, 110vw)",
+            top: "50%",
+            right: "50%",
+            blend: "screen",
+            opacity: 0.4,
+            falloff: "58%",
+            blurPx: 130,
+          },
+          {
+            hue: "rose",
+            color: "rgba(244,114,182,0.45)",
+            size: "min(1700px, 120vw)",
+            bottom: "-12%",
+            right: "26%",
+            blend: "screen",
+            opacity: 0.46,
+            falloff: "62%",
+            blurPx: 160,
+          },
+          {
+            hue: "amber",
+            color: "rgba(251,191,36,0.32)",
+            size: "min(1100px, 85vw)",
+            bottom: "10%",
+            left: "60%",
+            blend: "screen",
+            opacity: 0.38,
+            falloff: "56%",
+            blurPx: 120,
+            transform: "translate3d(-8%,12%,0)",
+          },
+        ]}
+      />
+
       {/* hero */}
       <section className="hero">
         <div className="container-narrow hero-grid">
@@ -184,15 +267,7 @@ export default function Home() {
         <div className="container-narrow">
           <div className="mb-14 text-center">
             {/* small decorative dots */}
-            <Reveal direction="down" duration={1400} distance={20} delay={100}>
-              <div className="mx-auto mb-4 mt-5 h-1 w-1 rounded-full bg-blue-600 opacity-30" />
-            </Reveal>
-            <Reveal direction="down" duration={1800} distance={20} delay={200}>
-              <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-60" />
-            </Reveal>
-            <Reveal direction="down" duration={2200} distance={20} delay={300}>
-              <div className="-mt-2 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-100" />
-            </Reveal>
+            <DecorativeDots />
 
             <Reveal direction="down" duration={1200} distance={20} delay={100}>
               <div className="eyebrow text-white/70 tracking-[.25em]">
