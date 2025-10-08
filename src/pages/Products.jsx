@@ -7,6 +7,7 @@ import Reveal from "@ui/Reveal";
 import ScrollSlide from "@ui/ScrollSlide";
 import NeedAssistance from "@features/NeedAssistance";
 import Meta from "@/components/seo/Meta";
+import ColorBlooms from "@ui/ColorBlooms";
 
 // images
 import heroGlobe from "@assets/img/irispProductsHero.webp";
@@ -123,7 +124,15 @@ export default function Products() {
 
       {/* content */}
       <section className="bg-transparent py-0">
-        <div className="background-generator background-generator--bluewhite">
+        <div className="bg-white">
+          <ColorBlooms
+            items={[
+              { hue: "blue", size: 2200, top: "10%",  right: "40%", falloff: "84%", blurPx: 110 },
+              { hue: "sky", size: 2800, top: "30%",  left: "40%", falloff: "84%", blurPx: 110 },
+              { hue: "sky", size: 1700, bottom: "7%", left: "65%", falloff: "84%", blurPx: 110 },
+              { hue: "blue", size: 1500, bottom: "-10%", right: "65%", falloff: "84%", blurPx: 110 },
+            ]}
+          />
           <div className="container mx-auto px-4 py-14 lg:py-20">
             <div className="grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)]">
               {/* left rail */}
