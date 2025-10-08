@@ -6,3 +6,5 @@ const NAV = [
   { label: "News", to: "/news" },
   { label: "Contact", to: "/contact" },
 ];
+
+export default NAV;
