@@ -123,10 +123,11 @@ export default function Contact() {
       
       <ColorBlooms
         items={[
-          { hue: "blue", size: 2200, top: "20%",  right: "40%", falloff: "84%", blurPx: 110 },
-          { hue: "sky", size: 2800, top: "2%",  left: "40%", falloff: "84%", blurPx: 110 },
-          { hue: "violet", size: 1700, bottom: "7%", left: "65%", falloff: "84%", blurPx: 110 },
-          { hue: "rose", size: 1500, bottom: "-10%", right: "65%", falloff: "84%", blurPx: 110 },
+          { hue: "blue",color: "rgba(59,130,246,0.3)", size: 1200, top: "55%",  right: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "sky", color: "rgba(56,189,248,0.3)", size: 1800, top: "10%",  right: "40%", falloff: "84%", blurPx: 110 },
+          { hue: "violet", color: "rgba(168,85,247,0.3)", size: 1700, bottom: "4%", left: "65%", falloff: "84%", blurPx: 110 },
+          { hue: "rose", color: "rgba(244,114,182,0.1)", size: 1500, bottom: "-6%", left: "48%", falloff: "84%", blurPx: 110 },
+          { hue: "teal", color: "rgba(45,212,191,0.3)", size: 1300, top: "36%", left: "65%", falloff: "84%", blurPx: 110 },
         ]}
       />
 
