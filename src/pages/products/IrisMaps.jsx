@@ -154,43 +154,14 @@ export default function IrisMaps() {
 
       {/* Blooms */}
       <ColorBlooms
-        className="absolute inset-0 z-[1] hidden md:block"
-        items={[
-          // softer bloom layout
-          {
-            hue: "blue",
-            size: "min(2200px, 140vw)",
-            top: "14%",
-            left: "-12%",
-            blend: "screen",
-            opacity: 0.5,
-          },
-          {
-            hue: "cyan",
-            size: "min(1600px, 110vw)",
-            top: "54%",
-            left: "0%",
-            blend: "screen",
-            opacity: 0.36,
-          },
-          {
-            hue: "violet",
-            size: "min(2200px, 140vw)",
-            top: "10%",
-            right: "-14%",
-            blend: "screen",
-            opacity: 0.45,
-          },
-          {
-            hue: "fuchsia",
-            size: "min(1500px, 100vw)",
-            bottom: "-6%",
-            right: "4%",
-            blend: "screen",
-            opacity: 0.32,
-          },
-        ]}
-      />
+              items={[
+                { hue: "blue",color: "rgba(59,130,246,0.3)", size: 1000, top: "50%",  right: "60%", falloff: "84%", blurPx: 110 },
+                { hue: "sky", color: "rgba(56,189,248,0.3)", size: 1200, top: "40%",  right: "-30%", falloff: "84%", blurPx: 110 },
+                { hue: "violet", color: "rgba(168,85,247,0.3)", size: 1700, bottom: "4%", left: "65%", falloff: "84%", blurPx: 110 },
+                { hue: "rose", color: "rgba(244,114,182,0.1)", size: 1500, bottom: "-6%", left: "48%", falloff: "84%", blurPx: 110 },
+                { hue: "teal", color: "rgba(45,212,191,0.3)", size: 1300, top: "70%", right: "65%", falloff: "84%", blurPx: 110 },
+              ]}
+            />
 
       {/* HERO */}
       <section className="relative overflow-hidden">

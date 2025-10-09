@@ -189,41 +189,12 @@ export default function IrisCore() {
       />
       {/* Rich, premium blooms (left/right only; no middle clutter) */}
       <ColorBlooms
-        className="absolute inset-0 z-[1] hidden md:block"
         items={[
-          // lighter bloom layout
-          {
-            hue: "blue",
-            size: "min(2200px, 140vw)",
-            top: "18%",
-            left: "-10%",
-            blend: "screen",
-            opacity: 0.48,
-          },
-          {
-            hue: "cyan",
-            size: "min(1600px, 110vw)",
-            top: "56%",
-            left: "2%",
-            blend: "screen",
-            opacity: 0.36,
-          },
-          {
-            hue: "violet",
-            size: "min(2200px, 140vw)",
-            top: "12%",
-            right: "-12%",
-            blend: "screen",
-            opacity: 0.44,
-          },
-          {
-            hue: "fuchsia",
-            size: "min(1500px, 100vw)",
-            bottom: "-4%",
-            right: "6%",
-            blend: "screen",
-            opacity: 0.32,
-          },
+          { hue: "blue",color: "rgba(59,130,246,0.3)", size: 1000, top: "5%",  right: "60%", falloff: "84%", blurPx: 110 },
+          { hue: "sky", color: "rgba(56,189,248,0.3)", size: 1200, top: "10%",  right: "-30%", falloff: "84%", blurPx: 110 },
+          { hue: "violet", color: "rgba(168,85,247,0.3)", size: 1700, bottom: "4%", left: "65%", falloff: "84%", blurPx: 110 },
+          { hue: "rose", color: "rgba(244,114,182,0.1)", size: 1500, bottom: "-6%", left: "48%", falloff: "84%", blurPx: 110 },
+          { hue: "teal", color: "rgba(45,212,191,0.3)", size: 1300, top: "70%", right: "65%", falloff: "84%", blurPx: 110 },
         ]}
       />
 
