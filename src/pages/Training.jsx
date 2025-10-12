@@ -27,7 +27,7 @@ export default function Training() {
       
       <ColorBlooms
         items={[
-          { hue: "blue",color: "rgba(59,130,246,0.3)", size: 1000, top: "10%",  right: "60%", falloff: "84%", blurPx: 110 },
+          { hue: "blue",color: "rgba(59,130,246,0.3)", size: 1000, top: "50%",  right: "60%", falloff: "84%", blurPx: 110 },
           { hue: "sky", color: "rgba(56,189,248,0.3)", size: 1200, top: "30%",  right: "-30%", falloff: "84%", blurPx: 110 },
           { hue: "violet", color: "rgba(168,85,247,0.3)", size: 1700, bottom: "4%", left: "65%", falloff: "84%", blurPx: 110 },
           { hue: "rose", color: "rgba(244,114,182,0.1)", size: 1500, bottom: "-6%", left: "48%", falloff: "84%", blurPx: 110 },
