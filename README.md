@@ -34,7 +34,6 @@ npm run preview
 ## ⚠️ Known issues (WIP)
 - **ScrollSlide** animation not fully smooth.
 - **Mobile** compatibility/layout issues in several sections.
-- **Pages** spacing and layout issues.
 - **Mail Endpoint** contact page submit fix.
 - **Comments** Make comments consistend and verbose throughout website for future developers quick and easy understanding.
 - **Privacy Policy** centain infomation is outdated.
