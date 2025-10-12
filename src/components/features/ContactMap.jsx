@@ -103,7 +103,7 @@ export default function ContactMap({
   }, [center, address]);
 
   return (
-    <section className="relative mt-16">
+    <section className="relative mt-40">
       {/* dots */}
       <Reveal direction="down" duration={1400} distance={20} delay={100}>
         <div className="mt-5 mx-auto mb-4 h-1 w-1 rounded-full bg-blue-600 opacity-33" />

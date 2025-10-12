@@ -198,7 +198,7 @@ export default function Testimonials({
         <div
           tabIndex={0}
           onKeyDown={onKeyDown}
-          className="mt-10 overflow-hidden md:mt-12"
+          className="overflow-hidden"
           aria-roledescription="carousel"
           aria-label="customer testimonials"
           onMouseEnter={stopTimer}
