@@ -6,10 +6,12 @@ import { dirname, resolve } from "node:path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const assetBase = process.env.VITE_ASSET_BASE ?? "/";
+
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
   plugins: [react()],
-  base: mode === "production" ? "/irisns/" : "/",
+  base: assetBase,
   appType: "spa",
   server: {
     host: "0.0.0.0",
